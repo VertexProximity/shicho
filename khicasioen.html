@@ -1,0 +1,2559 @@
+<!DOCTYPE html>
+<html >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="hevea 2.34">
+<style type="text/css">
+.li-itemize{margin:1ex 0ex;}
+.li-enumerate{margin:1ex 0ex;}
+.dd-description{margin:0ex 0ex 1ex 4ex;}
+.dt-description{margin:0ex;}
+.toc{list-style:none;}
+.footnotetext{margin:0ex; padding:0ex;}
+div.footnotetext P{margin:0px; text-indent:1em;}
+.thefootnotes{text-align:left;margin:0ex;}
+.dt-thefootnotes{margin:0em;}
+.dd-thefootnotes{margin:0em 0em 0em 2em;}
+.footnoterule{margin:1em auto 1em 0px;width:50%;}
+.caption{padding-left:2ex; padding-right:2ex; margin-left:auto; margin-right:auto}
+.title{margin:2ex auto;text-align:center}
+.titlemain{margin:1ex 2ex 2ex 1ex;}
+.titlerest{margin:0ex 2ex;}
+.center{text-align:center;margin-left:auto;margin-right:auto;}
+.flushleft{text-align:left;margin-left:0ex;margin-right:auto;}
+.flushright{text-align:right;margin-left:auto;margin-right:0ex;}
+div table{margin-left:inherit;margin-right:inherit;margin-bottom:2px;margin-top:2px}
+td table{margin:auto;}
+table{border-collapse:collapse;}
+td{padding:0;}
+.cellpadding0 tr td{padding:0;}
+.cellpadding1 tr td{padding:1px;}
+pre{text-align:left;margin-left:0ex;margin-right:auto;}
+blockquote{margin-left:4ex;margin-right:4ex;text-align:left;}
+td p{margin:0px;}
+.boxed{border:1px solid black}
+.textboxed{border:1px solid black}
+.vbar{border:none;width:2px;background-color:black;}
+.hbar{border:none;height:2px;width:100%;background-color:black;}
+.hfill{border:none;height:1px;width:200%;background-color:black;}
+.vdisplay{border-collapse:separate;border-spacing:2px;width:auto; empty-cells:show; border:2px solid red;}
+.vdcell{white-space:nowrap;padding:0px; border:2px solid green;}
+.display{border-collapse:separate;border-spacing:2px;width:auto; border:none;}
+.dcell{white-space:nowrap;padding:0px; border:none;}
+.dcenter{margin:0ex auto;}
+.vdcenter{border:solid #FF8000 2px; margin:0ex auto;}
+.minipage{text-align:left; margin-left:0em; margin-right:auto;}
+.marginpar{border:solid thin black; width:20%; text-align:left;}
+.marginparleft{float:left; margin-left:0ex; margin-right:1ex;}
+.marginparright{float:right; margin-left:1ex; margin-right:0ex;}
+.theorem{text-align:left;margin:1ex auto 1ex 0ex;}
+.part{margin:2ex auto;text-align:center}
+.lstlisting{font-family:monospace;white-space:pre;margin-right:auto;margin-left:0pt;text-align:left}
+</style>
+<script language="javascript"> 
+var ua = window.navigator.userAgent;  
+var old_ie = ua.indexOf('MSIE ');  
+var new_ie = ua.indexOf('Trident/');  
+if ((old_ie > -1) || (new_ie > -1) || Boolean(window.chrome)){
+ (function () {
+  var script = document.createElement("script");
+  script.type = "text/javascript";
+  script.src  = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML";
+  document.getElementsByTagName("head")[0].appendChild(script);
+})();
+}
+</script>
+<title>&#36;chi&#36;CAS(io)
+</title>
+</head>
+<body >
+<!--HEVEA command line is: hevea -fix khicasioen.tex -->
+<!--CUT STYLE article--><!--CUT DEF section 1 --><p>
+
+<div>
+<div id="maindiv" style="max-height: 500px; overflow:auto">
+
+</p><table class="title"><tr><td style="padding:1ex"><h1 class="titlemain"><math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>&chi;</mi></mrow><annotation encoding='application/x-tex'>\chi</annotation></semantics></math>CAS(io)</h1><h3 class="titlerest">Bernard.Parisse@univ-grenoble-alpes.fr</h3><h3 class="titlerest">2018, 2022</h3></td></tr>
+</table><!--TOC section id="sec1" Contents-->
+<h2 id="sec1" class="section">Contents</h2><!--SEC END --><ul class="toc"><li class="li-toc">
+<a href="#sec2">1  Introduction and installation</a>
+<ul class="toc"><li class="li-toc">
+<a href="#sec3">1.1  Calculator</a>
+</li><li class="li-toc"><a href="#sec4">1.2  Emulator</a>
+</li></ul>
+</li><li class="li-toc"><a href="#sec5">2  First steps</a>
+</li><li class="li-toc"><a href="#sec6">3  Common CAS commands</a>
+<ul class="toc"><li class="li-toc">
+<a href="#sec7">3.1  Expand and factor</a>
+</li><li class="li-toc"><a href="#sec8">3.2  Calculus</a>
+</li><li class="li-toc"><a href="#sec9">3.3  Solvers</a>
+</li><li class="li-toc"><a href="#sec10">3.4  Arithmetic</a>
+<ul class="toc"><li class="li-toc">
+<a href="#sec11">3.4.1  Integers</a>
+</li><li class="li-toc"><a href="#sec12">3.4.2  Polynomials</a>
+</li></ul>
+</li><li class="li-toc"><a href="#sec13">3.5  Linear algebra, vectors, matrices</a>
+</li></ul>
+</li><li class="li-toc"><a href="#sec14">4  Probabilities and statistics</a>
+<ul class="toc"><li class="li-toc">
+<a href="#sec15">4.1  Random numbers</a>
+</li><li class="li-toc"><a href="#sec16">4.2  Probabilities</a>
+</li><li class="li-toc"><a href="#sec17">4.3  1-d statistics</a>
+</li><li class="li-toc"><a href="#sec18">4.4  2-d statistics</a>
+</li></ul>
+</li><li class="li-toc"><a href="#sec19">5  Graphics</a>
+</li><li class="li-toc"><a href="#sec20">6  Programs</a>
+</li><li class="li-toc"><a href="#sec21">7  The 2d editor.</a>
+</li><li class="li-toc"><a href="#sec22">8  Managing sessions</a>
+<ul class="toc"><li class="li-toc">
+<a href="#sec23">8.1  Modifying a session</a>
+</li><li class="li-toc"><a href="#sec24">8.2  Variables</a>
+</li><li class="li-toc"><a href="#sec25">8.3  Archiving and exchanging with Xcas</a>
+</li></ul>
+</li><li class="li-toc"><a href="#sec26">9  Keyboard shortcuts.</a>
+<ul class="toc"><li class="li-toc">
+<a href="#sec27">9.1  KhiCAS 50 and 90 versions (2 files)</a>
+</li><li class="li-toc"><a href="#sec28">9.2  KhiCAS short version (1 file))</a>
+</li></ul>
+</li><li class="li-toc"><a href="#sec29">10  Remarks</a>
+</li><li class="li-toc"><a href="#sec30">11  More complete version for the CG50</a>
+<ul class="toc"><li class="li-toc">
+<a href="#sec31">11.1  MicroPython 1.12</a>
+</li><li class="li-toc"><a href="#sec32">11.2  3d and 4d graphs</a>
+</li><li class="li-toc"><a href="#sec33">11.3  Interactive geometry application</a>
+<ul class="toc"><li class="li-toc">
+<a href="#sec34">11.3.1  Modes, graphical and symbolic view</a>
+</li><li class="li-toc"><a href="#sec35">11.3.2  Cursors</a>
+</li><li class="li-toc"><a href="#sec36">11.3.3  Measures and legends</a>
+</li><li class="li-toc"><a href="#sec37">11.3.4  Traces</a>
+</li></ul>
+</li><li class="li-toc"><a href="#sec38">11.4  CAS spreadsheet...</a>
+</li></ul>
+</li><li class="li-toc"><a href="#sec39">12  Copyright and Thanks to.</a>
+</li><li class="li-toc"><a href="#sec40">13  Developer infos.</a>
+<ul class="toc"><li class="li-toc">
+<a href="#sec41">13.1  Debugger</a>
+</li><li class="li-toc"><a href="#sec42">13.2  Giac</a>
+</li></ul>
+</li></ul><blockquote class="abstract"><span style="font-weight:bold">Abstract: </span>
+This document explains how to run efficiently <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>&chi;</mi></mrow><annotation encoding='application/x-tex'>\chi</annotation></semantics></math>CAS
+on some Casio calculators (CG10, CG20, CG50 and Fx-9750GIII, Fx-9860GIII). 
+<math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>&chi;</mi></mrow><annotation encoding='application/x-tex'>\chi</annotation></semantics></math>CAS is a port of
+the <a href="https://www-fourier.univ-grenoble-alpes.fr.fr/~parisse/giac.html">Giac/Xcas</a> computer algebra system (CAS) for these calculators.<p>This document is interactive, you can modify and run commands by clicking
+in the <span class="textboxed">ok</span> button or by hitting Enter.
+</p></blockquote>
+<!--TOC section id="sec2" Introduction and installation-->
+<h2 id="sec2" class="section">1  Introduction and installation</h2><!--SEC END --><p> <a id="sec:install"></a>
+<math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>&chi;</mi></mrow><annotation encoding='application/x-tex'>\chi</annotation></semantics></math>CAS is a port of the
+<a href="https://www-fourier.univ-grenoble-alpes.fr.fr/~parisse/giac.html">Giac/Xcas</a>
+computer algebra system (CAS) for the following Casio calculators :
+CG10, CG20, CG50 and Fx-9750GIII, Fx-9860GIII. Beware:
+</p><ul class="itemize"><li class="li-itemize">
+<span style="font-weight:bold">CAS are not allowed during exams in some countries,
+it is the user responsability to check the rules before running </span><math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>&chi;</mi></mrow><annotation encoding='application/x-tex'>\chi</annotation></semantics></math><span style="font-weight:bold">CAS
+in an exam. The authors shall not be held responsible for misuse
+of </span><math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>&chi;</mi></mrow><annotation encoding='application/x-tex'>\chi</annotation></semantics></math><span style="font-weight:bold">CAS in exam conditions.</span>
+</li><li class="li-itemize"><math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>&chi;</mi></mrow><annotation encoding='application/x-tex'>\chi</annotation></semantics></math><span style="font-weight:bold">CAS is not compatible with exam mode</span>. In countries where
+CAS calculators are allowed, there is no reason to forbid <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>&chi;</mi></mrow><annotation encoding='application/x-tex'>\chi</annotation></semantics></math>CAS. If
+many teachers send a mail to Casio asking for <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>&chi;</mi></mrow><annotation encoding='application/x-tex'>\chi</annotation></semantics></math>CAS compatibility,
+we increase the chances that Casio sign the addin and make it
+compatible with exam mode.
+</li></ul><p>Two versions are available for the CG50, a light version that is
+the same as on CG10 and CG20 (in one file), and a more complete version in two
+files. The more complete version has more Xcas commands (like geometry
+commands), a 3d rendering engine, some additional apps (like a
+formal spreadsheet or a financial application) and a port
+of MicroPython 1.12 with more modules than the Casio port of
+MicroPython 1.09, cf. section <a href="#sec%3A2">11</a>.</p>
+<!--TOC subsection id="sec3" Calculator-->
+<h3 id="sec3" class="subsection">1.1  Calculator</h3><!--SEC END --><p>
+To install or update <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>&chi;</mi></mrow><annotation encoding='application/x-tex'>\chi</annotation></semantics></math>CAS, get on your computer
+</p><ul class="itemize"><li class="li-itemize">
+for the FXCG50
+the files 
+<a href="https://www-fourier.univ-grenoble-alpes.fr/~parisse/casio/khicas50.ac2">khicas50.ac2</a>
+and 
+<a href="https://www-fourier.univ-grenoble-alpes.fr/~parisse/casio/khicas50.g3a">khicas50.g3a</a>.
+</li><li class="li-itemize">for the FXCG10 and 20 (works also on the FXCG50 but is less complete)
+<a href="https://www-fourier.univ-grenoble-alpes.fr/~parisse/casio/khicasen.g3a">khicasen.g3a</a>
+</li><li class="li-itemize">for the FX-9750GIII, Fx-9860GIII, the file
+<a href="https://www-fourier.univ-grenoble-alpes.fr/~parisse/casio/khicasen.g1a">khicasen.g1a</a>
+</li></ul><p>Connect the USB cable of the calculator, type F1 for USB key connection
+and copy the file(s) <code>khicas50.g3a</code> and <code>khicas50.ac2</code>
+or <code>khicasen.g3a</code> or <code>khicasen.g1a</code>) 
+on the calculator USB-“key”
+then disconnect the calculator-key from your computer and wait a few seconds.</p><p><span style="font-weight:bold">Beware</span>, some users have reported crashes with addin support on
+OS 3.8.
+If you have upgraded your calculator, you should downgrade to
+<a href="https://tiplanet.org/forum/archives_list.php?cat=OS+cprizm">version 3.7</a>.
+Downgrading is normally not allowed, you will have to do the following
+(thanks to critor, TI-Planet) :
+</p><ol class="enumerate" type=1><li class="li-enumerate">
+keep pressed the restart button and the keys
+F2, 4 and AC
+</li><li class="li-enumerate">release the restart button while keeping F2 4 AC pressed
+</li><li class="li-enumerate">release keys F2 and 4
+</li><li class="li-enumerate">wait one second
+</li><li class="li-enumerate">release the AC key
+</li><li class="li-enumerate">press key 9, wait one second, release key 9
+</li><li class="li-enumerate">keep key * pressed
+</li><li class="li-enumerate">the calculator should start on an “OS ERROR” screen,
+release the * key
+</li><li class="li-enumerate">run the 3.7 install software
+</li></ol>
+<!--TOC subsection id="sec4" Emulator-->
+<h3 id="sec4" class="subsection">1.2  Emulator</h3><!--SEC END --><p>
+If you test on the emulator,
+(<a href="https://tiplanet.org/forum/archives_voir.php?id=1209556">PC</a>,
+<a href="https://tiplanet.org/forum/archives_voir.php?id=1352720">Mac</a>), 
+from the main menu of the calculator (MENU), go to Memory
+then F3 (Import/Export), then F1 (Import files),
+select the file <code>khicasen.g3a</code> (or <code>khicasen.g1a</code>), 
+type F1 to save to
+the calculator root directory, confirm with F1 if you upgrade.</p><p>Be patient, the transfert will take several minutes.
+Once the transfert is finished, you should see the icon
+of Xcas in the main menu (a snowflake on the CG10/20/50).</p><p>If you want to run the complete version for the CG50, replace the file
+above by these 2 files
+<a href="https://www-fourier.univ-grenoble-alpes.fr/~parisse/casio/khicas50.882">khicas50.882</a>
+and
+<a href="https://www-fourier.univ-grenoble-alpes.fr/~parisse/casio/emucas50.g3a">emucas50.g3a</a>.</p><p>Note that <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>&chi;</mi></mrow><annotation encoding='application/x-tex'>\chi</annotation></semantics></math>CAS is not compatible with the simulator distributed
+by Casio on USB keys in some countries, you must run the emulator.
+Once installed, the Windows version of the emulator can be run under Linux with wine
+by the following command<br>
+<code>wine "C:\Program Files (x86)\CASIO\fx-CG Manager PLUS Subscription for fx-CG50series\fx-CG_Manager_PLUS_Subscription_for_fx-CG50series.exe" /n"fx-CG Manager PLUS Subscription for fx-CG50series" &amp;</code></p>
+<!--TOC section id="sec5" First steps-->
+<h2 id="sec5" class="section">2  First steps</h2><!--SEC END --><p>
+From the main menu (MENU), move the cursor to the Xcas icon
+and hit EXE. This opens the “shell” (or history) where you can write
+most Xcas commands.</p><p>If you are running the 2 files version and see the message “Unable to
+load ram part”, upgrade your calculator OS (version 3.30 or greater).</p><p>For example, type
+<code>1/2+1/6</code>
+then EXE, you should see the result <code>2/3</code> 
+displayed below.</p><p>Hint : If you can not find a character on the calculator keyboard, press
+shift INS.</p><p>You can copy a level from the history of commands by hitting the
+up and down arrow keys (once or more) and EXE. Then you can
+modify the command and run it with EXE. For example, up arrow twice,
+EXE, replace <code>1/6</code> by <code>1/3</code> and hit EXE.</p><p>The last result is stored in <code>ans()</code>, hit the <code>Ans</code>
+calculator key (shift <code>(-)</code>) to get it.
+It is recommended to store the result in a variable if you want
+to reuse a result later. There are two ways to store a value in a
+variable
+</p><ul class="itemize"><li class="li-itemize">
+right-store with <code>=&gt;</code> using the
+<math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mo>&rightarrow;</mo></mrow><annotation encoding='application/x-tex'>\rightarrow</annotation></semantics></math> key, for example <code>2=&gt;A</code> stores 2 in variable A.
+Now, every time you write <code>A</code> in a computation, it
+will be replaced by 2.
+</li><li class="li-itemize">left-store with <code>:=</code> (shift <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mo>&rightarrow;</mo></mrow><annotation encoding='application/x-tex'>\rightarrow</annotation></semantics></math>), 
+for example <code>A:=2</code> does the same as <code>2=&gt;A</code>.
+</li></ul><p>The most popular Xcas commands are available from F1 (algebra)
+and F2 (calculus), from various shortcuts (cf. section
+<a href="#sec%3Ashortcuts">9</a>), 
+or from the cmds (F4) or shift CATALOG, where
+they are shortly explained with an example.
+Hit F4 (cmds), choose a submenu, 
+for example <code>Algebra</code>, hit EXE,
+move the selection to a command, for example <code>factor</code>.
+Now F6 will display a short help with an example. Hit F2
+to copy the example in the commandline.
+You can run it as is (EXE) or modify it and run it (EXE) if
+you want to factor another polynomial.</p><p>When a command returns an expression, it is displayed in 2d mode.
+You can move with the pad if the expression is larger than the display.
+Type shift-F3 or ALPHA-F3 to modify the fontsize. 
+Type EXIT to go back to the shell.
+The 2d view is in fact a 2d editor that will be explained later.</p><p>Now, try to type the command <code>plot(sin(x))</code>.
+Hint: type F4 (cmd), then select
+<code>Graphs</code>.</p><p>When a command returns a graph, it will be displayed in a 2d frame.
+You can modify the displayed area with <code>+</code> or <code>-</code> 
+(zoom in or out, <code>(-)</code> does a partial zoomout along <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>O</mi><mi>y</mi></mrow><annotation encoding='application/x-tex'>Oy</annotation></semantics></math>),
+the cursor keys, <code>/</code> (orthonormalisation of the frame),
+<code>*</code> (autoscale), VAR or OPTN is a switch to display or hide axis.
+Type F1 (menu) to modify the graphic window settings Xmin, Xmax, Ymin, Ymax.
+Type EXIT to go back to the shell.</p><p>The KhiCAS File menu (F6) has an item <code>Clear</code> that will erase
+the display. This will not clear the variables, to achieve that
+type <code>VARS</code>, select the last item (<code>restart</code>)
+and confirm with EXE.</p><p>Hit MENU to leave <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>&chi;</mi></mrow><annotation encoding='application/x-tex'>\chi</annotation></semantics></math>CAS.
+If you launch another application, the variables and history will
+be saved, they will be restored if you come back to <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>&chi;</mi></mrow><annotation encoding='application/x-tex'>\chi</annotation></semantics></math>CAS.
+First time save is sometimes slow (10 to 20 seconds),
+next save will run faster.</p>
+<!--TOC section id="sec6" Common CAS commands-->
+<h2 id="sec6" class="section">3  Common CAS commands</h2><!--SEC END -->
+<!--TOC subsection id="sec7" Expand and factor-->
+<h3 id="sec7" class="subsection">3.1  Expand and factor</h3><!--SEC END --><p>
+From F4 commands catalog, select <code>Algebra</code>, or type F1.
+</p><ul class="itemize"><li class="li-itemize">
+<code>factor</code> : factorization. Shortcut <code>=&gt;*</code>
+(<math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mo>&rightarrow;</mo></mrow><annotation encoding='application/x-tex'>\rightarrow</annotation></semantics></math> key then *),
+for example <br><textarea onkeypress="UI.ckenter(event,this,2)" 
+style="width:400px;font-size:large">x^4-1=>* 
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value); tmp=UI.latexeval(tmp);nextSibling.innerHTML='&nbsp;'+tmp; if (UI.usemathjax) MathJax.Hub.Queue(['Typeset',MathJax.Hub,nextSibling])">exe</button><span></span><br>
+.
+Run <code>cfactor</code> to factor over <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mo lspace="0em" rspace="thinmathspace">C</mo></mrow><annotation encoding='application/x-tex'>\C</annotation></semantics></math>.
+</li><li class="li-itemize"><code>partfrac</code> : expands a polynomial or
+performs partial fraction expansion over a fraction.
+Shortcut <code>=&gt;+</code> (<math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mo>&rightarrow;</mo></mrow><annotation encoding='application/x-tex'>\rightarrow</annotation></semantics></math> then + key), 
+for example <br><textarea onkeypress="UI.ckenter(event,this,2)" 
+style="width:400px;font-size:large"> (x+1)^4=>+ 
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value); tmp=UI.latexeval(tmp);nextSibling.innerHTML='&nbsp;'+tmp; if (UI.usemathjax) MathJax.Hub.Queue(['Typeset',MathJax.Hub,nextSibling])">exe</button><span></span><br>
+ 
+or <br><textarea onkeypress="UI.ckenter(event,this,2)" 
+style="width:400px;font-size:large">1/(x^4-1)=>+ 
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value); tmp=UI.latexeval(tmp);nextSibling.innerHTML='&nbsp;'+tmp; if (UI.usemathjax) MathJax.Hub.Queue(['Typeset',MathJax.Hub,nextSibling])">exe</button><span></span><br>
+.
+</li><li class="li-itemize"><code>simplify</code> : tries to simplify an expression.
+Shortcut <code>=&gt;/</code> (<math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mo>&rightarrow;</mo></mrow><annotation encoding='application/x-tex'>\rightarrow</annotation></semantics></math> key then /), 
+for example <br><textarea onkeypress="UI.ckenter(event,this,2)" 
+style="width:400px;font-size:large">sin(3x)/sin(x)=>/ 
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value); tmp=UI.latexeval(tmp);nextSibling.innerHTML='&nbsp;'+tmp; if (UI.usemathjax) MathJax.Hub.Queue(['Typeset',MathJax.Hub,nextSibling])">exe</button><span></span><br>
+
+</li><li class="li-itemize"><code>ratnormal</code> : rewrite as an irreducible fraction.
+</li></ul>
+<!--TOC subsection id="sec8" Calculus-->
+<h3 id="sec8" class="subsection">3.2  Calculus</h3><!--SEC END --><p>
+From F4 commands catalog, select <code>Calculus</code>, or type F2
+</p><ul class="itemize"><li class="li-itemize">
+<code>diff</code> : derivative. 
+Shortcut <code>'</code> for derivative with respect to <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>x</mi></mrow><annotation encoding='application/x-tex'>x</annotation></semantics></math>, example
+<br><textarea onkeypress="UI.ckenter(event,this,2)" 
+style="width:400px;font-size:large">diff(sin(x),x) 
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value); tmp=UI.latexeval(tmp);nextSibling.innerHTML='&nbsp;'+tmp; if (UI.usemathjax) MathJax.Hub.Queue(['Typeset',MathJax.Hub,nextSibling])">exe</button><span></span><br>
+ and <br><textarea onkeypress="UI.ckenter(event,this,2)" 
+style="width:400px;font-size:large">sin(x)' 
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value); tmp=UI.latexeval(tmp);nextSibling.innerHTML='&nbsp;'+tmp; if (UI.usemathjax) MathJax.Hub.Queue(['Typeset',MathJax.Hub,nextSibling])">exe</button><span></span><br>
+ are equivalent.
+For <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>n</mi></mrow><annotation encoding='application/x-tex'>n</annotation></semantics></math>th-derivative, add <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>n</mi></mrow><annotation encoding='application/x-tex'>n</annotation></semantics></math>,
+for example 3rd derivative <br><textarea onkeypress="UI.ckenter(event,this,2)" 
+style="width:400px;font-size:large">diff(sin(x^2),x,3) 
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value); tmp=UI.latexeval(tmp);nextSibling.innerHTML='&nbsp;'+tmp; if (UI.usemathjax) MathJax.Hub.Queue(['Typeset',MathJax.Hub,nextSibling])">exe</button><span></span><br>
+.
+</li><li class="li-itemize"><code>integrate</code> : antiderivative (1 or 2 or 4 arguments)
+for example 
+<br><textarea onkeypress="UI.ckenter(event,this,2)" 
+style="width:400px;font-size:large">integrate(sin(x)) 
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value); tmp=UI.latexeval(tmp);nextSibling.innerHTML='&nbsp;'+tmp; if (UI.usemathjax) MathJax.Hub.Queue(['Typeset',MathJax.Hub,nextSibling])">exe</button><span></span><br>
+ or <br><textarea onkeypress="UI.ckenter(event,this,2)" 
+style="width:400px;font-size:large">integrate(1/(t^4-1),t) 
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value); tmp=UI.latexeval(tmp);nextSibling.innerHTML='&nbsp;'+tmp; if (UI.usemathjax) MathJax.Hub.Queue(['Typeset',MathJax.Hub,nextSibling])">exe</button><span></span><br>
+
+for <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mo>&Integral;</mo><mfrac><mn>1</mn><mrow><msup><mi>t</mi> <mn>4</mn></msup><mo>&minus;</mo><mn>1</mn></mrow></mfrac><mspace width="mediummathspace"/><mi>d</mi><mi>t</mi></mrow><annotation encoding='application/x-tex'>\int \frac{1}{t^4&#x2d;1} \ dt </annotation></semantics></math><br>
+Defined integration with 4 arguments, for
+example <br><textarea onkeypress="UI.ckenter(event,this,2)" 
+style="width:400px;font-size:large">integrate(sin(x)^4,x,0,pi) 
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value); tmp=UI.latexeval(tmp);nextSibling.innerHTML='&nbsp;'+tmp; if (UI.usemathjax) MathJax.Hub.Queue(['Typeset',MathJax.Hub,nextSibling])">exe</button><span></span><br>
+
+computes <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><msubsup><mo>&Integral;</mo> <mn>0</mn> <mi>&pi;</mi></msubsup><mi>sin</mi><mo stretchy="false">(</mo><mi>x</mi><msup><mo stretchy="false">)</mo> <mn>4</mn></msup><mspace width="mediummathspace"/><mi>d</mi><mi>x</mi></mrow><annotation encoding='application/x-tex'>\int_0^\pi \sin(x)^4 \ dx</annotation></semantics></math>.
+For an approximate computation, enter one boundary as
+an approx number, for example
+<br><textarea onkeypress="UI.ckenter(event,this,2)" 
+style="width:400px;font-size:large">integrate(sin(x)^4,x,0.0,pi) 
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value); tmp=UI.latexeval(tmp);nextSibling.innerHTML='&nbsp;'+tmp; if (UI.usemathjax) MathJax.Hub.Queue(['Typeset',MathJax.Hub,nextSibling])">exe</button><span></span><br>
+
+</li><li class="li-itemize"><code>limit</code> : limit of an expression.
+Example <br><textarea onkeypress="UI.ckenter(event,this,2)" 
+style="width:400px;font-size:large">limit((cos(x)-1)/x^2,x=0) 
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value); tmp=UI.latexeval(tmp);nextSibling.innerHTML='&nbsp;'+tmp; if (UI.usemathjax) MathJax.Hub.Queue(['Typeset',MathJax.Hub,nextSibling])">exe</button><span></span><br>
+
+</li><li class="li-itemize"><code>tabvar</code> : table of variations of an expression.
+for example <br><textarea onkeypress="UI.ckenter(event,this,2)" 
+style="width:400px;font-size:large">tabvar(x^3-7x+5) 
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value); tmp=UI.latexeval(tmp);nextSibling.innerHTML='&nbsp;'+tmp; if (UI.usemathjax) MathJax.Hub.Queue(['Typeset',MathJax.Hub,nextSibling])">exe</button><span></span><br>
+
+one can check with the graph 
+<textarea onkeypress="UI.ckenter(event,this,1)" 
+style="width:400px;font-size:large">plot(x^3-7x+5,x,-4,4)
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value);tmp=UI.rmquote(tmp); nextSibling.innerHTML='&nbsp;'+tmp;UI.render_canvas(nextSibling);">exe</button><span></span><br>
+
+</li><li class="li-itemize"><code>taylor</code> and <code>series</code> : Taylor expansion
+or asymptotic serie expansion, for example
+
+<textarea onkeypress="UI.ckenter(event,this,1)" 
+style="width:400px;font-size:large">taylor(sin(x),x=0,5)
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value);tmp=UI.rmquote(tmp); nextSibling.innerHTML='&nbsp;'+tmp;UI.render_canvas(nextSibling);">exe</button><span></span><br>
+<br>
+Add <code>polynomial</code> if you do not want to have the remainder term.
+</li><li class="li-itemize"><code>sum</code> : discrete summation, for example
+<br><textarea onkeypress="UI.ckenter(event,this,2)" 
+style="width:400px;font-size:large">sum(k^2,k,1,n) 
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value); tmp=UI.latexeval(tmp);nextSibling.innerHTML='&nbsp;'+tmp; if (UI.usemathjax) MathJax.Hub.Queue(['Typeset',MathJax.Hub,nextSibling])">exe</button><span></span><br>
+ computes <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><msubsup><mo lspace="thinmathspace" rspace="thinmathspace">&Sum;</mo> <mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow> <mi>n</mi></msubsup><msup><mi>k</mi> <mn>2</mn></msup></mrow><annotation encoding='application/x-tex'>\sum_{k=1}^n k^2</annotation></semantics></math>,
+<br><textarea onkeypress="UI.ckenter(event,this,2)" 
+style="width:400px;font-size:large">sum(k^2,k,1,n)=>* 
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value); tmp=UI.latexeval(tmp);nextSibling.innerHTML='&nbsp;'+tmp; if (UI.usemathjax) MathJax.Hub.Queue(['Typeset',MathJax.Hub,nextSibling])">exe</button><span></span><br>
+ computes the sum and 
+rewrites it factored.
+</li></ul>
+<!--TOC subsection id="sec9" Solvers-->
+<h3 id="sec9" class="subsection">3.3  Solvers</h3><!--SEC END --><p>
+From F4 commands catalog, select <code>Solve</code>.
+</p><ul class="itemize"><li class="li-itemize">
+<code>solve</code> solves an equation exactly. Takes the variable
+to solve for as second argument, unless it is <code>x</code>, for
+example <br><textarea onkeypress="UI.ckenter(event,this,2)" 
+style="width:400px;font-size:large">solve(t^2-1=0,t) 
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value); tmp=UI.latexeval(tmp);nextSibling.innerHTML='&nbsp;'+tmp; if (UI.usemathjax) MathJax.Hub.Queue(['Typeset',MathJax.Hub,nextSibling])">exe</button><span></span><br>
+.<br>
+If exact solving fails, run <code>fsolve</code>
+for approx solving, either with an iterative method
+starting with a guess <br><textarea onkeypress="UI.ckenter(event,this,2)" 
+style="width:400px;font-size:large">fsolve(cos(x)=x,x=0.0) 
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value); tmp=UI.latexeval(tmp);nextSibling.innerHTML='&nbsp;'+tmp; if (UI.usemathjax) MathJax.Hub.Queue(['Typeset',MathJax.Hub,nextSibling])">exe</button><span></span><br>
+,
+or by dichotomy <br><textarea onkeypress="UI.ckenter(event,this,2)" 
+style="width:400px;font-size:large">fsolve(cos(x)=x,x=0..1) 
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value); tmp=UI.latexeval(tmp);nextSibling.innerHTML='&nbsp;'+tmp; if (UI.usemathjax) MathJax.Hub.Queue(['Typeset',MathJax.Hub,nextSibling])">exe</button><span></span><br>
+.<br>
+For complex solutions, run <code>csolve</code>.<br>
+It is possible to restrict solutions using assumptions on the variable,
+for example <br><textarea onkeypress="UI.ckenter(event,this,2)" 
+style="width:400px;font-size:large">assume(m>1) 
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value); tmp=UI.latexeval(tmp);nextSibling.innerHTML='&nbsp;'+tmp; if (UI.usemathjax) MathJax.Hub.Queue(['Typeset',MathJax.Hub,nextSibling])">exe</button><span></span><br>
+ then <br><textarea onkeypress="UI.ckenter(event,this,2)" 
+style="width:400px;font-size:large">solve(m^2-4=0,m) 
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value); tmp=UI.latexeval(tmp);nextSibling.innerHTML='&nbsp;'+tmp; if (UI.usemathjax) MathJax.Hub.Queue(['Typeset',MathJax.Hub,nextSibling])">exe</button><span></span><br>
+.
+</li><li class="li-itemize"><code>solve</code> can also solve (simple) polynomial systems,
+enter a list of equations as 1st argument and a list of variables
+as 2nd argument, for example intersection of a circle and a line:
+<br><textarea onkeypress="UI.ckenter(event,this,2)" 
+style="width:400px;font-size:large">solve([x^2+y^2+2y=3,x+y=1],[x,y]) 
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value); tmp=UI.latexeval(tmp);nextSibling.innerHTML='&nbsp;'+tmp; if (UI.usemathjax) MathJax.Hub.Queue(['Typeset',MathJax.Hub,nextSibling])">exe</button><span></span><br>
+
+</li><li class="li-itemize">Run <code>linsolve</code> to solve linear systems.
+enter a list of equations as 1st argument and a list of variables
+as 2nd argument, example:
+<br><textarea onkeypress="UI.ckenter(event,this,2)" 
+style="width:400px;font-size:large">linsolve([x+2y=3,x-y=7],[x,y]) 
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value); tmp=UI.latexeval(tmp);nextSibling.innerHTML='&nbsp;'+tmp; if (UI.usemathjax) MathJax.Hub.Queue(['Typeset',MathJax.Hub,nextSibling])">exe</button><span></span><br>
+
+</li><li class="li-itemize">Run <code>desolve</code> to solve exactly a differential equation.
+for example, to solve <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>y</mi><mo>&prime;</mo><mo>=</mo><mn>2</mn><mi>y</mi></mrow><annotation encoding='application/x-tex'>y&apos;=2y</annotation></semantics></math>, type <code>desolve(y'=2y)</code>.<br>
+Another example with an initial condition:<br>
+<code>desolve([y'=2y,y(0)=1],x,y)</code><br>
+Run <code>odesolve</code> for approx solving or <code>plotode</code> 
+for a graphic representation of the approx. solution. 
+</li><li class="li-itemize"><code>rsolve</code> solves some recurrence relations
+<math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><msub><mi>u</mi> <mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><mi>f</mi><mo stretchy="false">(</mo><msub><mi>u</mi> <mi>n</mi></msub><mo>,</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo stretchy="false">)</mo></mrow><annotation encoding='application/x-tex'>u_{n+1}=f(u_n,...)</annotation></semantics></math>,
+for example to solve the arithmetico-geometric recurrence
+<math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><msub><mi>u</mi> <mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><mn>2</mn><msub><mi>u</mi> <mi>n</mi></msub><mo>+</mo><mn>3</mn><mo>,</mo><msub><mi>u</mi> <mn>0</mn></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding='application/x-tex'>u_{n+1}=2u_n+3, u_0=1</annotation></semantics></math>, type:
+<br><textarea onkeypress="UI.ckenter(event,this,2)" 
+style="width:400px;font-size:large">rsolve(u(n+1)=2*u(n)+3,u(n),u(0)=1) 
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value); tmp=UI.latexeval(tmp);nextSibling.innerHTML='&nbsp;'+tmp; if (UI.usemathjax) MathJax.Hub.Queue(['Typeset',MathJax.Hub,nextSibling])">exe</button><span></span><br>
+
+</li></ul>
+<!--TOC subsection id="sec10" Arithmetic-->
+<h3 id="sec10" class="subsection">3.4  Arithmetic</h3><!--SEC END --><p>
+When required, the distinction between integer arithmetic 
+and polynomial arithmetic is done by a prefix <code>i</code> for
+integer commands. For example <code>ifactor</code> for integer factorization
+and <code>factor</code> for polynomial factorization
+(or <code>cfactor</code> for polynomial factorization over <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mo lspace="0em" rspace="thinmathspace">C</mo></mrow><annotation encoding='application/x-tex'>\C</annotation></semantics></math>).
+Some commands work for integers and polynomials, like
+<code>gcd</code> and <code>lcm</code>.</p>
+<!--TOC subsubsection id="sec11" Integers-->
+<h4 id="sec11" class="subsubsection">3.4.1  Integers</h4><!--SEC END --><p>
+From F4 catalog, select <code>Arithmetic, Crypto</code>. Shortcut 
+shift S<math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mo>&leftrightarrow;</mo></mrow><annotation encoding='application/x-tex'>\leftrightarrow</annotation></semantics></math>D
+</p><ul class="itemize"><li class="li-itemize">
+<code>iquo(a,b)</code>, 
+<code>irem(a,b)</code> quotient and remainder of euclidean division
+of two integers.<br>
+<br><textarea onkeypress="UI.ckenter(event,this,2)" 
+style="width:400px;font-size:large">iquo(23,13),irem(23,13) 
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value); tmp=UI.latexeval(tmp);nextSibling.innerHTML='&nbsp;'+tmp; if (UI.usemathjax) MathJax.Hub.Queue(['Typeset',MathJax.Hub,nextSibling])">exe</button><span></span><br>
+
+</li><li class="li-itemize"><code>isprime(n)</code> checks whether <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>n</mi></mrow><annotation encoding='application/x-tex'>n</annotation></semantics></math> is prime.
+This is a probabilisitic test for large values of <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>n</mi></mrow><annotation encoding='application/x-tex'>n</annotation></semantics></math>.
+<br><textarea onkeypress="UI.ckenter(event,this,2)" 
+style="width:400px;font-size:large">isprime(2^64+1) 
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value); tmp=UI.latexeval(tmp);nextSibling.innerHTML='&nbsp;'+tmp; if (UI.usemathjax) MathJax.Hub.Queue(['Typeset',MathJax.Hub,nextSibling])">exe</button><span></span><br>
+
+</li><li class="li-itemize"><code>ifactor(n)</code> factorizes an integer
+(not too large, since algorithms used are trial division and
+Pollard-<math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>&rho;</mi></mrow><annotation encoding='application/x-tex'>\rho</annotation></semantics></math>, there is no space left in memory for quadratic sieve),
+for example
+<br><textarea onkeypress="UI.ckenter(event,this,2)" 
+style="width:400px;font-size:large">ifactor(2^64+1) 
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value); tmp=UI.latexeval(tmp);nextSibling.innerHTML='&nbsp;'+tmp; if (UI.usemathjax) MathJax.Hub.Queue(['Typeset',MathJax.Hub,nextSibling])">exe</button><span></span><br>
+<br>
+Shortcut <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mo>&rightarrow;</mo></mrow><annotation encoding='application/x-tex'>\rightarrow</annotation></semantics></math> then * (<code>=&gt;*</code>)
+</li><li class="li-itemize"><code>gcd(a,b)</code>, <code>lcm(a,b)</code> GCD and LCM
+of two integers or polynomials.<br>
+<br><textarea onkeypress="UI.ckenter(event,this,2)" 
+style="width:400px;font-size:large">gcd(25,15),lcm(25,15) 
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value); tmp=UI.latexeval(tmp);nextSibling.innerHTML='&nbsp;'+tmp; if (UI.usemathjax) MathJax.Hub.Queue(['Typeset',MathJax.Hub,nextSibling])">exe</button><span></span><br>
+<br>
+<br><textarea onkeypress="UI.ckenter(event,this,2)" 
+style="width:400px;font-size:large">gcd(x^3-1,x^2-1),lcm(x^3-1,x^2-1) 
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value); tmp=UI.latexeval(tmp);nextSibling.innerHTML='&nbsp;'+tmp; if (UI.usemathjax) MathJax.Hub.Queue(['Typeset',MathJax.Hub,nextSibling])">exe</button><span></span><br>
+
+</li><li class="li-itemize"><code>iegcd(a,b)</code> returns 3 integers <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>u</mi><mo>,</mo><mi>v</mi><mo>,</mo><mi>d</mi></mrow><annotation encoding='application/x-tex'>u,v,d</annotation></semantics></math> such that
+<math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>a</mi><mi>u</mi><mo>+</mo><mi>b</mi><mi>v</mi><mo>=</mo><mi>d</mi></mrow><annotation encoding='application/x-tex'>au+bv=d</annotation></semantics></math> where <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>d</mi></mrow><annotation encoding='application/x-tex'>d</annotation></semantics></math> is the GCD of <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>a</mi></mrow><annotation encoding='application/x-tex'>a</annotation></semantics></math> et <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>b</mi></mrow><annotation encoding='application/x-tex'>b</annotation></semantics></math>, <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mo stretchy="false">&vert;</mo><mi>u</mi><mo stretchy="false">&vert;</mo><mi>&lt;</mi><mo stretchy="false">&vert;</mo><mi>b</mi><mo stretchy="false">&vert;</mo></mrow><annotation encoding='application/x-tex'>|u|&amp;lt;|b|</annotation></semantics></math> and
+<math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mo stretchy="false">&vert;</mo><mi>v</mi><mo stretchy="false">&vert;</mo><mi>&lt;</mi><mo stretchy="false">&vert;</mo><mi>a</mi><mo stretchy="false">&vert;</mo></mrow><annotation encoding='application/x-tex'>|v|&amp;lt;|a|</annotation></semantics></math>.<br>
+<br><textarea onkeypress="UI.ckenter(event,this,2)" 
+style="width:400px;font-size:large">u,v,d:=iegcd(23,13); 23u+13v 
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value); tmp=UI.latexeval(tmp);nextSibling.innerHTML='&nbsp;'+tmp; if (UI.usemathjax) MathJax.Hub.Queue(['Typeset',MathJax.Hub,nextSibling])">exe</button><span></span><br>
+
+</li><li class="li-itemize"><code>ichinrem([a,m],[b,n])</code> returns (if possible)
+<math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>c</mi></mrow><annotation encoding='application/x-tex'>c</annotation></semantics></math> such that <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>c</mi><mo>=</mo><mi>a</mi><mrow><mo lspace="mediummathspace">(</mo><mo rspace="thinmathspace">mod</mo><mi>m</mi><mo rspace="mediummathspace">)</mo></mrow></mrow><annotation encoding='application/x-tex'>c=a \pmod m</annotation></semantics></math> and <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>c</mi><mo>=</mo><mi>b</mi><mrow><mo lspace="mediummathspace">(</mo><mo rspace="thinmathspace">mod</mo><mi>n</mi><mo rspace="mediummathspace">)</mo></mrow></mrow><annotation encoding='application/x-tex'>c=b \pmod n</annotation></semantics></math> (if <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>m</mi></mrow><annotation encoding='application/x-tex'>m</annotation></semantics></math> are <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>n</mi></mrow><annotation encoding='application/x-tex'>n</annotation></semantics></math>
+coprime, <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>c</mi></mrow><annotation encoding='application/x-tex'>c</annotation></semantics></math> exists).
+<br><textarea onkeypress="UI.ckenter(event,this,2)" 
+style="width:400px;font-size:large">c,n:=ichinrem([1,23],[2,13]); irem(c,23); irem(c,13) 
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value); tmp=UI.latexeval(tmp);nextSibling.innerHTML='&nbsp;'+tmp; if (UI.usemathjax) MathJax.Hub.Queue(['Typeset',MathJax.Hub,nextSibling])">exe</button><span></span><br>
+
+</li><li class="li-itemize"><code>powmod(a,n,m)</code> returns <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><msup><mi>a</mi> <mi>n</mi></msup><mrow><mo lspace="mediummathspace">(</mo><mo rspace="thinmathspace">mod</mo><mi>m</mi><mo rspace="mediummathspace">)</mo></mrow></mrow><annotation encoding='application/x-tex'>a^n \pmod m</annotation></semantics></math> 
+computed by the fast modular powering algorithm<br>
+<br><textarea onkeypress="UI.ckenter(event,this,2)" 
+style="width:400px;font-size:large">powmod(7,22,23) 
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value); tmp=UI.latexeval(tmp);nextSibling.innerHTML='&nbsp;'+tmp; if (UI.usemathjax) MathJax.Hub.Queue(['Typeset',MathJax.Hub,nextSibling])">exe</button><span></span><br>
+
+</li><li class="li-itemize"><code>asc</code> converts a string to a list of
+ASCII code, <code>char</code> converts back a list to a string.
+These commands may be used to easily write cryptographic algorithms
+with string messages.
+</li></ul>
+<!--TOC subsubsection id="sec12" Polynomials-->
+<h4 id="sec12" class="subsubsection">3.4.2  Polynomials</h4><!--SEC END --><p>
+From F4 catalog, select <code>Polynomials</code>.
+The default variable is <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>x</mi></mrow><annotation encoding='application/x-tex'>x</annotation></semantics></math>, otherwise you can specify it as last 
+optional argument. For example <code>degree(x^2*y)</code>
+or <code>degree(x^2*y,x)</code> return 2, 
+<code>degree(x^2*y,y)</code> returns 1.
+</p><ul class="itemize"><li class="li-itemize">
+<code>coeff(P,n)</code> coefficient of <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><msup><mi>x</mi> <mi>n</mi></msup></mrow><annotation encoding='application/x-tex'>x^n</annotation></semantics></math> in <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>P</mi></mrow><annotation encoding='application/x-tex'>P</annotation></semantics></math>, <code>lcoeff(P)</code>
+leading coefficient of <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>P</mi></mrow><annotation encoding='application/x-tex'>P</annotation></semantics></math>, for example
+<br><textarea onkeypress="UI.ckenter(event,this,2)" 
+style="width:400px;font-size:large">P:=x^3+3x; coeff(P,1); lcoeff(P) 
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value); tmp=UI.latexeval(tmp);nextSibling.innerHTML='&nbsp;'+tmp; if (UI.usemathjax) MathJax.Hub.Queue(['Typeset',MathJax.Hub,nextSibling])">exe</button><span></span><br>
+
+</li><li class="li-itemize"><code>degre(P)</code> degree of polynomial <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>P</mi></mrow><annotation encoding='application/x-tex'>P</annotation></semantics></math>
+
+<textarea onkeypress="UI.ckenter(event,this,1)" 
+style="width:400px;font-size:large">degree(x^3)
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value);tmp=UI.rmquote(tmp); nextSibling.innerHTML='&nbsp;'+tmp;UI.render_canvas(nextSibling);">exe</button><span></span><br>
+
+</li><li class="li-itemize"><code>quo(P,Q)</code>, <code>rem(P,Q)</code> quotient and remainder
+of euclidean division of <code>P</code> by <code>Q</code>
+<br><textarea onkeypress="UI.ckenter(event,this,2)" 
+style="width:400px;font-size:large">P:=x^3+7x-5; Q:=x^2+x; quo(P,Q); rem(P,Q) 
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value); tmp=UI.latexeval(tmp);nextSibling.innerHTML='&nbsp;'+tmp; if (UI.usemathjax) MathJax.Hub.Queue(['Typeset',MathJax.Hub,nextSibling])">exe</button><span></span><br>
+
+</li><li class="li-itemize"><code>proot(P)</code> : approx. roots of <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>P</mi></mrow><annotation encoding='application/x-tex'>P</annotation></semantics></math>
+(all roots, real and complex)<br>
+
+<textarea onkeypress="UI.ckenter(event,this,1)" 
+style="width:400px;font-size:large">proot(x^5+x+1)
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value);tmp=UI.rmquote(tmp); nextSibling.innerHTML='&nbsp;'+tmp;UI.render_canvas(nextSibling);">exe</button><span></span><br>
+
+Graphic representation<br>
+
+<textarea onkeypress="UI.ckenter(event,this,1)" 
+style="width:400px;font-size:large">point(proot(x^5+x+1))
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value);tmp=UI.rmquote(tmp); nextSibling.innerHTML='&nbsp;'+tmp;UI.render_canvas(nextSibling);">exe</button><span></span><br>
+
+</li><li class="li-itemize"><code>interp(X,Y)</code> : for two lists of the same size,
+returns the interpolating polynomial <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>P</mi></mrow><annotation encoding='application/x-tex'>P</annotation></semantics></math> such that <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>P</mi><mo stretchy="false">(</mo><msub><mi>X</mi> <mi>i</mi></msub><mo stretchy="false">)</mo><mo>=</mo><msub><mi>Y</mi> <mi>i</mi></msub></mrow><annotation encoding='application/x-tex'>P(X_i)=Y_i</annotation></semantics></math>. <br>
+<br><textarea onkeypress="UI.ckenter(event,this,2)" 
+style="width:400px;font-size:large">X,Y:=[0,1,2,3],[1,-3,-2,0]; P:=interp(X,Y)=>+ 
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value); tmp=UI.latexeval(tmp);nextSibling.innerHTML='&nbsp;'+tmp; if (UI.usemathjax) MathJax.Hub.Queue(['Typeset',MathJax.Hub,nextSibling])">exe</button><span></span><br>
+
+Graphic representation<br>
+
+<textarea onkeypress="UI.ckenter(event,this,1)" 
+style="width:400px;font-size:large">scatterplot(X,Y); plot(P,x,-1,4)
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value);tmp=UI.rmquote(tmp); nextSibling.innerHTML='&nbsp;'+tmp;UI.render_canvas(nextSibling);">exe</button><span></span><br>
+
+</li><li class="li-itemize"><code>resultant(P,Q)</code> : resultant of polynomials
+<math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>P</mi></mrow><annotation encoding='application/x-tex'>P</annotation></semantics></math> and <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>Q</mi></mrow><annotation encoding='application/x-tex'>Q</annotation></semantics></math>
+
+<textarea onkeypress="UI.ckenter(event,this,1)" 
+style="width:400px;font-size:large">P:=x^3+7x-5; Q:=x^2+x; resultant(P,Q)
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value);tmp=UI.rmquote(tmp); nextSibling.innerHTML='&nbsp;'+tmp;UI.render_canvas(nextSibling);">exe</button><span></span><br>
+
+</li><li class="li-itemize"><code>hermite(x,n)</code> : <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>n</mi></mrow><annotation encoding='application/x-tex'>n</annotation></semantics></math>-th Hermite polynomial 
+(orthogonal for the density <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><msup><mi>e</mi> <mrow><mo lspace="verythinmathspace" rspace="0em">&minus;</mo><msup><mi>x</mi> <mn>2</mn></msup></mrow></msup><mi>d</mi><mi>x</mi></mrow><annotation encoding='application/x-tex'>e^{&#x2d;x^2}dx</annotation></semantics></math> on <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mo lspace="0em" rspace="thinmathspace">R</mo></mrow><annotation encoding='application/x-tex'>\R</annotation></semantics></math>)
+</li><li class="li-itemize"><code>laguerre(x,n,a)</code> : <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>n</mi></mrow><annotation encoding='application/x-tex'>n</annotation></semantics></math>-th Laguerre polynomial 
+</li><li class="li-itemize"><code>legendre(x,n)</code> : <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>n</mi></mrow><annotation encoding='application/x-tex'>n</annotation></semantics></math>-th Legendre polynomial 
+(orthogonal for the density <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>d</mi><mi>x</mi></mrow><annotation encoding='application/x-tex'>dx</annotation></semantics></math> on <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mo stretchy="false">[</mo><mo lspace="verythinmathspace" rspace="0em">&minus;</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="false">]</mo></mrow><annotation encoding='application/x-tex'>[&#x2d;1,1]</annotation></semantics></math>)
+</li><li class="li-itemize"><code>tchebyshev1(n)</code> and <code>tchebyshev2(n)</code>
+Tchebyshev polynomials of 1st and 2nd kind
+defined by :
+<math xmlns='http://www.w3.org/1998/Math/MathML' display='block'><semantics><mrow><msub><mi>T</mi> <mi>n</mi></msub><mo stretchy="false">(</mo><mi>cos</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo>=</mo><mi>cos</mi><mo stretchy="false">(</mo><mi>n</mi><mi>x</mi><mo stretchy="false">)</mo><mo>,</mo><mspace width="1em"/><msub><mi>U</mi> <mi>n</mi></msub><mo stretchy="false">(</mo><mi>cos</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mi>sin</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mi>sin</mi><mo stretchy="false">(</mo><mo stretchy="false">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding='application/x-tex'>T_n(\cos(x))=\cos(nx), \quad U_n(\cos(x))\sin(x)=\sin((n+1)x) </annotation></semantics></math>
+</li></ul>
+<!--TOC subsection id="sec13" Linear algebra, vectors, matrices-->
+<h3 id="sec13" class="subsection">3.5  Linear algebra, vectors, matrices</h3><!--SEC END --><p>
+Xcas does not make distinction between vectors and lists. For
+example,
+
+</p><pre class="verbatim">v:=[1,2]; w:=[3,4]</pre><p> 
+<button onclick="var field=parentNode.previousSibling; var tmp=field.innerHTML;if(tmp.length==0) tmp=field.value;var t=createElement('TEXTAREA');t.style.fontSize=20;t.cols=60;t.rows=UI.count_newline(tmp);var tmp1=UI.ltgt(tmp)[0];t.value=tmp1;tmp=UI.caseval(tmp);tmp=UI.rmquote(tmp);nextSibling.innerHTML=tmp; UI.render_canvas(nextSibling); field.parentNode.insertBefore(t,field);field.parentNode.removeChild(field);">exe</button><span>onload</span><br>
+
+
+defines 2 vectors <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>v</mi></mrow><annotation encoding='application/x-tex'>v</annotation></semantics></math> and <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>w</mi></mrow><annotation encoding='application/x-tex'>w</annotation></semantics></math>, then <code>dot</code> will compute
+the scalar product of <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>v</mi></mrow><annotation encoding='application/x-tex'>v</annotation></semantics></math> and <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>w</mi></mrow><annotation encoding='application/x-tex'>w</annotation></semantics></math>:
+
+<textarea onkeypress="UI.ckenter(event,this,1)" 
+style="width:400px;font-size:large">dot(v,w)
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value);tmp=UI.rmquote(tmp); nextSibling.innerHTML='&nbsp;'+tmp;UI.render_canvas(nextSibling);">exe</button><span></span><br>
+</p><p>A matrix is a list of lists of the same size.
+You can enter a matrix element by element using the
+matrix editor (shift-MATR EXE or F6 0). Enter a new variable
+name to create a new matrix 
+or the name of an existing variable to edit a matrix.
+The <code>,</code> key may be used to insert a line or column, and
+the <code>DEL</code> key erases the line or column of the selection
+(press <code>UNDO</code> if you want to go one step back).
+For small matrices, it is also convenient to enter them directly in the
+commandline, for example to define
+<math xmlns='http://www.w3.org/1998/Math/MathML' display='block'><semantics><mrow><mi>A</mi><mo>=</mo><mrow><mo>(</mo><mtable displaystyle="false" rowspacing="0.5ex" columnalign="center center"><mtr><mtd><mn>1</mn></mtd> <mtd><mn>2</mn></mtd></mtr> <mtr><mtd><mn>3</mn></mtd> <mtd><mn>4</mn></mtd></mtr></mtable><mo>)</mo></mrow></mrow><annotation encoding='application/x-tex'>A=\left(\begin{array}{cc} 1 &amp; 2 \\ 3 &amp; 4 \end{array}\right) </annotation></semantics></math>
+type 
+</p><pre class="verbatim">A:=[[1,2],[3,4]]</pre><p> 
+<button onclick="var field=parentNode.previousSibling; var tmp=field.innerHTML;if(tmp.length==0) tmp=field.value;var t=createElement('TEXTAREA');t.style.fontSize=20;t.cols=60;t.rows=UI.count_newline(tmp);var tmp1=UI.ltgt(tmp)[0];t.value=tmp1;tmp=UI.caseval(tmp);tmp=UI.rmquote(tmp);nextSibling.innerHTML=tmp; UI.render_canvas(nextSibling); field.parentNode.insertBefore(t,field);field.parentNode.removeChild(field);">exe</button><span>onload</span><br>
+
+ 
+or <br><textarea onkeypress="UI.ckenter(event,this,2)" 
+style="width:400px;font-size:large">[[1,2],[3,4]]=>A 
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value); tmp=UI.latexeval(tmp);nextSibling.innerHTML='&nbsp;'+tmp; if (UI.usemathjax) MathJax.Hub.Queue(['Typeset',MathJax.Hub,nextSibling])">exe</button><span></span><br>
+
+It is recommended to store matrices in variables!</p><p>If a matrix is defined by a formula, then it’s better to use the
+<code>matrix</code> command (shift-MATR EXE AC), for example:
+<br><textarea onkeypress="UI.ckenter(event,this,2)" 
+style="width:400px;font-size:large">matrix(2,2,(j,k)->1/(j+k+1)) 
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value); tmp=UI.latexeval(tmp);nextSibling.innerHTML='&nbsp;'+tmp; if (UI.usemathjax) MathJax.Hub.Queue(['Typeset',MathJax.Hub,nextSibling])">exe</button><span></span><br>
+ 
+returns the matrix where coefficient line <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>j</mi></mrow><annotation encoding='application/x-tex'>j</annotation></semantics></math> and column <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>k</mi></mrow><annotation encoding='application/x-tex'>k</annotation></semantics></math>
+is <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mfrac><mn>1</mn><mrow><mi>j</mi><mo>+</mo><mi>k</mi><mo>+</mo><mn>1</mn></mrow></mfrac></mrow><annotation encoding='application/x-tex'>\frac{1}{j+k+1}</annotation></semantics></math> (beware, indices begin at 0).</p><p>Run <code>idn(n)</code> to get the identity matrix of order <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>n</mi></mrow><annotation encoding='application/x-tex'>n</annotation></semantics></math>
+and <code>ranm(n,m,law,[parameter])</code> to
+get a matrix with random coefficients with dimensions <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>n</mi><mo>,</mo><mi>m</mi></mrow><annotation encoding='application/x-tex'>n,m</annotation></semantics></math>.
+for example 
+<br><textarea onkeypress="UI.ckenter(event,this,2)" 
+style="width:400px;font-size:large">U:=ranm(4,4,uniformd,0,1) 
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value); tmp=UI.latexeval(tmp);nextSibling.innerHTML='&nbsp;'+tmp; if (UI.usemathjax) MathJax.Hub.Queue(['Typeset',MathJax.Hub,nextSibling])">exe</button><span></span><br>
+
+<br><textarea onkeypress="UI.ckenter(event,this,2)" 
+style="width:400px;font-size:large">N:=ranm(4,4,normald,0,1) 
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value); tmp=UI.latexeval(tmp);nextSibling.innerHTML='&nbsp;'+tmp; if (UI.usemathjax) MathJax.Hub.Queue(['Typeset',MathJax.Hub,nextSibling])">exe</button><span></span><br>
+</p><p>For basic arithmetic on matrices, use keyboard operators
+(<code>+ - *</code>, inverse). Otherwise, open catalog and
+select <code>Matrices</code>
+</p><ul class="itemize"><li class="li-itemize">
+<br><textarea onkeypress="UI.ckenter(event,this,2)" 
+style="width:400px;font-size:large">eigenvals(A) 
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value); tmp=UI.latexeval(tmp);nextSibling.innerHTML='&nbsp;'+tmp; if (UI.usemathjax) MathJax.Hub.Queue(['Typeset',MathJax.Hub,nextSibling])">exe</button><span></span><br>
+
+<br><textarea onkeypress="UI.ckenter(event,this,2)" 
+style="width:400px;font-size:large">eigenvects(A) 
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value); tmp=UI.latexeval(tmp);nextSibling.innerHTML='&nbsp;'+tmp; if (UI.usemathjax) MathJax.Hub.Queue(['Typeset',MathJax.Hub,nextSibling])">exe</button><span></span><br>
+ 
+eigenvalues and eigenvectors of matrix <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>A</mi></mrow><annotation encoding='application/x-tex'>A</annotation></semantics></math>.
+</li><li class="li-itemize"><br><textarea onkeypress="UI.ckenter(event,this,2)" 
+style="width:400px;font-size:large">P,D:=jordan(A) 
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value); tmp=UI.latexeval(tmp);nextSibling.innerHTML='&nbsp;'+tmp; if (UI.usemathjax) MathJax.Hub.Queue(['Typeset',MathJax.Hub,nextSibling])">exe</button><span></span><br>
+ 
+finds the Jordan normal form of matrix <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>A</mi></mrow><annotation encoding='application/x-tex'>A</annotation></semantics></math>, returns
+matrices <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>P</mi></mrow><annotation encoding='application/x-tex'>P</annotation></semantics></math> and <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>D</mi></mrow><annotation encoding='application/x-tex'>D</annotation></semantics></math> such that
+<math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><msup><mi>P</mi> <mrow><mo lspace="verythinmathspace" rspace="0em">&minus;</mo><mn>1</mn></mrow></msup><mi>A</mi><mi>P</mi><mo>=</mo><mi>D</mi></mrow><annotation encoding='application/x-tex'>P^{&#x2d;1}AP=D</annotation></semantics></math>, with <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>D</mi></mrow><annotation encoding='application/x-tex'>D</annotation></semantics></math> upper triangular (diagonal if <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>A</mi></mrow><annotation encoding='application/x-tex'>A</annotation></semantics></math> is
+diagonalizable)
+</li><li class="li-itemize"><br><textarea onkeypress="UI.ckenter(event,this,2)" 
+style="width:400px;font-size:large">Ak:=matpow(A,k) 
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value); tmp=UI.latexeval(tmp);nextSibling.innerHTML='&nbsp;'+tmp; if (UI.usemathjax) MathJax.Hub.Queue(['Typeset',MathJax.Hub,nextSibling])">exe</button><span></span><br>
+ computes
+matrix <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>A</mi></mrow><annotation encoding='application/x-tex'>A</annotation></semantics></math> to the <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>k</mi></mrow><annotation encoding='application/x-tex'>k</annotation></semantics></math>-th power, where <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>k</mi></mrow><annotation encoding='application/x-tex'>k</annotation></semantics></math> is symbolic.
+</li><li class="li-itemize"><code>rref</code>: row reduction to echelon form
+</li><li class="li-itemize"><code>lu</code>: <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>L</mi><mi>U</mi></mrow><annotation encoding='application/x-tex'>LU</annotation></semantics></math> factorization of matrix <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>A</mi></mrow><annotation encoding='application/x-tex'>A</annotation></semantics></math>,
+returns a permutation <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>P</mi></mrow><annotation encoding='application/x-tex'>P</annotation></semantics></math> and two matrices <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>L</mi></mrow><annotation encoding='application/x-tex'>L</annotation></semantics></math> (lower)
+and <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>U</mi></mrow><annotation encoding='application/x-tex'>U</annotation></semantics></math> (upper) such that
+<math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>P</mi><mi>A</mi><mo>=</mo><mi>L</mi><mi>U</mi></mrow><annotation encoding='application/x-tex'>PA=LU</annotation></semantics></math>. The result of
+
+<textarea onkeypress="UI.ckenter(event,this,1)" 
+style="width:400px;font-size:large">P,L,U:=lu(A)
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value);tmp=UI.rmquote(tmp); nextSibling.innerHTML='&nbsp;'+tmp;UI.render_canvas(nextSibling);">exe</button><span></span><br>
+ 
+may be passed as an argument to the command 
+<textarea onkeypress="UI.ckenter(event,this,1)" 
+style="width:400px;font-size:large">linsolve(P,L,U,v)
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value);tmp=UI.rmquote(tmp); nextSibling.innerHTML='&nbsp;'+tmp;UI.render_canvas(nextSibling);">exe</button><span></span><br>
+
+to solve a system <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>A</mi><mi>x</mi><mo>=</mo><mi>b</mi></mrow><annotation encoding='application/x-tex'>Ax=b</annotation></semantics></math> by solving two triangular systems
+(in <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>n</mi> <mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding='application/x-tex'>O(n^2)</annotation></semantics></math> instead of <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>n</mi> <mn>3</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding='application/x-tex'>O(n^3)</annotation></semantics></math>).
+</li><li class="li-itemize"><code>qr</code> <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>Q</mi><mi>R</mi></mrow><annotation encoding='application/x-tex'>QR</annotation></semantics></math> factorization of matrix <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>A</mi></mrow><annotation encoding='application/x-tex'>A</annotation></semantics></math>,
+<math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>Q</mi></mrow><annotation encoding='application/x-tex'>Q</annotation></semantics></math> is orthogonal and <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>R</mi></mrow><annotation encoding='application/x-tex'>R</annotation></semantics></math> upper triangular, <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>A</mi><mo>=</mo><mi>Q</mi><mi>R</mi></mrow><annotation encoding='application/x-tex'>A=QR</annotation></semantics></math>.
+</li><li class="li-itemize"><code>svd(A)</code> singular value decomposition of matrix <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>A</mi></mrow><annotation encoding='application/x-tex'>A</annotation></semantics></math>
+returns <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>U</mi></mrow><annotation encoding='application/x-tex'>U</annotation></semantics></math> orthogonal, <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>S</mi></mrow><annotation encoding='application/x-tex'>S</annotation></semantics></math> vector of singular values, <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>Q</mi></mrow><annotation encoding='application/x-tex'>Q</annotation></semantics></math>
+orthogonal such that <code>A=U*diag(S)*tran(Q)</code>. <br>
+The ratio of the largest and the smallest singular value of <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>S</mi></mrow><annotation encoding='application/x-tex'>S</annotation></semantics></math>
+is the condition number of <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>A</mi></mrow><annotation encoding='application/x-tex'>A</annotation></semantics></math> relative to the Euclidean norm.
+</li></ul>
+<!--TOC section id="sec14" Probabilities and statistics-->
+<h2 id="sec14" class="section">4  Probabilities and statistics</h2><!--SEC END -->
+<!--TOC subsection id="sec15" Random numbers-->
+<h3 id="sec15" class="subsection">4.1  Random numbers</h3><!--SEC END --><p>
+From F4 catalog, select <code>Probabilities</code>
+then 
+<textarea onkeypress="UI.ckenter(event,this,1)" 
+style="width:400px;font-size:large">rand()
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value);tmp=UI.rmquote(tmp); nextSibling.innerHTML='&nbsp;'+tmp;UI.render_canvas(nextSibling);">exe</button><span></span><br>
+ (real in <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mo stretchy="false">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding='application/x-tex'>[0,1)</annotation></semantics></math>) or 
+
+<textarea onkeypress="UI.ckenter(event,this,1)" 
+style="width:400px;font-size:large">n:=6:; randint(n)
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value);tmp=UI.rmquote(tmp); nextSibling.innerHTML='&nbsp;'+tmp;UI.render_canvas(nextSibling);">exe</button><span></span><br>
+ 
+(integer between 1 and <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>n</mi></mrow><annotation encoding='application/x-tex'>n</annotation></semantics></math>). 
+Other commands with prefix <code>rand</code> are available, followed
+by the name of the law, for example <code>randbinomial(n,p)</code> 
+returns a random integer according to binomial law of parameters <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>n</mi><mo>,</mo><mi>p</mi></mrow><annotation encoding='application/x-tex'>n,p</annotation></semantics></math>.
+For a random vector or matrix, run
+<code>ranv</code> or <code>ranm</code> (from <code>Alglin, Matrice</code> submenu), 
+for example for a vector with 10 random
+reals according to normal law (mean 0, stddev 1), type<br>
+<br><textarea onkeypress="UI.ckenter(event,this,2)" 
+style="width:400px;font-size:large">ranv(10,normald,0,1) 
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value); tmp=UI.latexeval(tmp);nextSibling.innerHTML='&nbsp;'+tmp; if (UI.usemathjax) MathJax.Hub.Queue(['Typeset',MathJax.Hub,nextSibling])">exe</button><span></span><br>
+</p>
+<!--TOC subsection id="sec16" Probabilities-->
+<h3 id="sec16" class="subsection">4.2  Probabilities</h3><!--SEC END --><p>
+From F4 catalog, select <code>Probabilities</code> (8).
+There you will find a few distribution laws: 
+<code>binomial</code>, <code>normald</code>, <code>exponentiald</code>
+and <code>uniformd</code>. Other distribution must be keyed in:
+<code>chisquared</code>, <code>geometric</code>, <code>multinomial</code>,
+<code>studentd</code>, <code>fisherd</code>, <code>poisson</code>.</p><p>To get the cumulated distribution function, enter the law name then
+the <code>_cdf</code> suffix (shortcut: select 
+<code>cdf</code> in the catalog at the end and press F1).
+Inverse cumulated distribution function follows the same principle
+with <code>_icdf</code> suffix (shortcut:
+select <code>cdf</code> in the catalog and press F2).</p><p>Example : find the centered interval <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>I</mi></mrow><annotation encoding='application/x-tex'>I</annotation></semantics></math> for the normal law of
+mean 5000, standard deviation 200, such that the probability
+to be outside <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>I</mi></mrow><annotation encoding='application/x-tex'>I</annotation></semantics></math> is 5%
+
+<textarea onkeypress="UI.ckenter(event,this,1)" 
+style="width:400px;font-size:large">M:=5000; S:=200; normald_icdf(M,S,0.025);normald_icdf(M,S,0.975)
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value);tmp=UI.rmquote(tmp); nextSibling.innerHTML='&nbsp;'+tmp;UI.render_canvas(nextSibling);">exe</button><span></span><br>
+</p>
+<!--TOC subsection id="sec17" 1-d statistics-->
+<h3 id="sec17" class="subsection">4.3  1-d statistics</h3><!--SEC END --><p>
+The statistic functions are taking lists as arguments,
+for example 
+</p><pre class="verbatim">l:=[9,11,6,13,17,10]</pre><p> 
+<button onclick="var field=parentNode.previousSibling; var tmp=field.innerHTML;if(tmp.length==0) tmp=field.value;var t=createElement('TEXTAREA');t.style.fontSize=20;t.cols=60;t.rows=UI.count_newline(tmp);var tmp1=UI.ltgt(tmp)[0];t.value=tmp1;tmp=UI.caseval(tmp);tmp=UI.rmquote(tmp);nextSibling.innerHTML=tmp; UI.render_canvas(nextSibling); field.parentNode.insertBefore(t,field);field.parentNode.removeChild(field);">exe</button><span>onload</span><br>
+
+
+From F4 catalog, select <code>Statistics</code>:
+</p><ul class="itemize"><li class="li-itemize">
+
+<textarea onkeypress="UI.ckenter(event,this,1)" 
+style="width:400px;font-size:large">mean(l)
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value);tmp=UI.rmquote(tmp); nextSibling.innerHTML='&nbsp;'+tmp;UI.render_canvas(nextSibling);">exe</button><span></span><br>
+ : arithmetic mean of a list
+</li><li class="li-itemize">
+<textarea onkeypress="UI.ckenter(event,this,1)" 
+style="width:400px;font-size:large">stddev(l)
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value);tmp=UI.rmquote(tmp); nextSibling.innerHTML='&nbsp;'+tmp;UI.render_canvas(nextSibling);">exe</button><span></span><br>
+ : standard deviation of a list.<br>
+Run
+
+<textarea onkeypress="UI.ckenter(event,this,1)" 
+style="width:400px;font-size:large">stddevp(l)
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value);tmp=UI.rmquote(tmp); nextSibling.innerHTML='&nbsp;'+tmp;UI.render_canvas(nextSibling);">exe</button><span></span><br>
+ to get an unbiaised estimate of the standard
+deviation of a population from a sample <code>l</code>
+</li><li class="li-itemize">
+<textarea onkeypress="UI.ckenter(event,this,1)" 
+style="width:400px;font-size:large">median(l)
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value);tmp=UI.rmquote(tmp); nextSibling.innerHTML='&nbsp;'+tmp;UI.render_canvas(nextSibling);">exe</button><span></span><br>
+, 
+<textarea onkeypress="UI.ckenter(event,this,1)" 
+style="width:400px;font-size:large">quartile1(l)
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value);tmp=UI.rmquote(tmp); nextSibling.innerHTML='&nbsp;'+tmp;UI.render_canvas(nextSibling);">exe</button><span></span><br>
+, 
+
+<textarea onkeypress="UI.ckenter(event,this,1)" 
+style="width:400px;font-size:large">quartile3(l)
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value);tmp=UI.rmquote(tmp); nextSibling.innerHTML='&nbsp;'+tmp;UI.render_canvas(nextSibling);">exe</button><span></span><br>
+
+returns respectivly the median, first and third quartile
+of a list.
+</li></ul><p>
+For 1-d statistics with frequencies, replace <code>l</code>
+by two lists of the same length, the first list being the
+values of the serie, the second list the frequencies.
+For graphic representations, open catalog, <code>Graphic</code> 
+and select <code>histogram</code> or <code>barplot</code>.</p>
+<!--TOC subsection id="sec18" 2-d statistics-->
+<h3 id="sec18" class="subsection">4.4  2-d statistics</h3><!--SEC END --><p>
+From F4 catalog, select <code>Statistics</code>:
+</p><ul class="itemize"><li class="li-itemize">
+<code>correlation(X,Y)</code>: correlation of two 
+lists <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>X</mi></mrow><annotation encoding='application/x-tex'>X</annotation></semantics></math> and <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>Y</mi></mrow><annotation encoding='application/x-tex'>Y</annotation></semantics></math> of the same length.
+</li><li class="li-itemize"><code>covariance(X,Y)</code>:: covariance of two 
+lists <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>X</mi></mrow><annotation encoding='application/x-tex'>X</annotation></semantics></math> and <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>Y</mi></mrow><annotation encoding='application/x-tex'>Y</annotation></semantics></math> of the same length.
+</li><li class="li-itemize">regression computations:
+run commands with suffix <code>_regression(X,Y)</code>,
+for example <code>linear_regression(X,Y)</code> returns
+coefficients <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>m</mi><mo>,</mo><mi>p</mi></mrow><annotation encoding='application/x-tex'>m,p</annotation></semantics></math> of the linear regression line
+<math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>y</mi><mo>=</mo><mi>m</mi><mi>x</mi><mo>+</mo><mi>p</mi></mrow><annotation encoding='application/x-tex'>y=mx+p</annotation></semantics></math>.
+</li><li class="li-itemize"><code>linear_regression_plot(X,Y)</code> 
+and all commands
+of suffix <code>_regression_plot</code>
+will display the line (or curve) of the regression.
+These commands will also print the <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><msup><mi>R</mi> <mn>2</mn></msup></mrow><annotation encoding='application/x-tex'>R^2</annotation></semantics></math> coefficient
+that give information on the quality of adjustment
+(<math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><msup><mi>R</mi> <mn>2</mn></msup></mrow><annotation encoding='application/x-tex'>R^2</annotation></semantics></math> near 1 is good).
+</li></ul>
+<!--TOC section id="sec19" Graphics-->
+<h2 id="sec19" class="section">5  Graphics</h2><!--SEC END --><p>
+From F4 catalog, select <code>Graphics</code> (or type the plot shortcut F3)
+and choose a graphic command. If you want to have more than one curve
+on the same graphic, enter several commands with <code>;</code> as separator.
+</p><ul class="itemize"><li class="li-itemize">
+<code>plot(f(x),x=a..b)</code> plot expression <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding='application/x-tex'>f(x)</annotation></semantics></math> for <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>x</mi><mo>&Element;</mo><mo stretchy="false">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">]</mo></mrow><annotation encoding='application/x-tex'>x\in [a,b]</annotation></semantics></math>.
+Discretization option: <code>xstep=</code>,
+for example 
+<textarea onkeypress="UI.ckenter(event,this,1)" 
+style="width:400px;font-size:large">plot(x^2,x=-4..4,xstep=1)
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value);tmp=UI.rmquote(tmp); nextSibling.innerHTML='&nbsp;'+tmp;UI.render_canvas(nextSibling);">exe</button><span></span><br>
+
+Default is 384 evaluations per plot (one per horizontal pixel).
+</li><li class="li-itemize"><code>plotseq(f(x),x=[u0,a,b])</code> webplot for a recurrent
+sequence <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><msub><mi>u</mi> <mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><mi>f</mi><mo stretchy="false">(</mo><msub><mi>u</mi> <mi>n</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding='application/x-tex'>u_{n+1}=f(u_n)</annotation></semantics></math> of first term <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><msub><mi>u</mi> <mn>0</mn></msub></mrow><annotation encoding='application/x-tex'>u_0</annotation></semantics></math>,
+for example if <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><msub><mi>u</mi> <mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><msqrt><mrow><mn>2</mn><mo>+</mo><msub><mi>u</mi> <mi>n</mi></msub></mrow></msqrt><mo>,</mo><msub><mi>u</mi> <mn>0</mn></msub><mo>=</mo><mn>6</mn></mrow><annotation encoding='application/x-tex'>u_{n+1}=\sqrt{2+u_n}, u_0=6</annotation></semantics></math>, with a plot
+on <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mo stretchy="false">[</mo><mn>0</mn><mo>,</mo><mn>7</mn><mo stretchy="false">]</mo></mrow><annotation encoding='application/x-tex'>[0,7]</annotation></semantics></math>
+
+<textarea onkeypress="UI.ckenter(event,this,1)" 
+style="width:400px;font-size:large">plotseq(sqrt(2+x),x=[6,0,7])
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value);tmp=UI.rmquote(tmp); nextSibling.innerHTML='&nbsp;'+tmp;UI.render_canvas(nextSibling);">exe</button><span></span><br>
+
+</li><li class="li-itemize"><code>plotparam([x(t),y(t)],t=tm..tM)</code> parametric plot
+<math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>,</mo><mi>y</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding='application/x-tex'>(x(t),y(t))</annotation></semantics></math> for <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>t</mi><mo>&Element;</mo><mo stretchy="false">[</mo><msub><mi>t</mi> <mi>m</mi></msub><mo>,</mo><msub><mi>t</mi> <mi>M</mi></msub><mo stretchy="false">]</mo></mrow><annotation encoding='application/x-tex'>t\in [t_m,t_M]</annotation></semantics></math>. Discretization option: <code>tstep=</code>.
+Example
+
+<textarea onkeypress="UI.ckenter(event,this,1)" 
+style="width:400px;font-size:large">plotparam([sin(2t),cos(3t)],t,0,2*pi)
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value);tmp=UI.rmquote(tmp); nextSibling.innerHTML='&nbsp;'+tmp;UI.render_canvas(nextSibling);">exe</button><span></span><br>
+
+</li><li class="li-itemize"><code>plotpolar(r(theta),theta=a..b)</code> polar plot
+of <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>r</mi><mo stretchy="false">(</mo><mi>&theta;</mi><mo stretchy="false">)</mo></mrow><annotation encoding='application/x-tex'>r(\theta)</annotation></semantics></math> for <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>&theta;</mi><mo>&Element;</mo><mo stretchy="false">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">]</mo></mrow><annotation encoding='application/x-tex'>\theta \in [a,b]</annotation></semantics></math>,
+for example
+
+<textarea onkeypress="UI.ckenter(event,this,1)" 
+style="width:400px;font-size:large">plotpolar(sin(3*theta),theta,0,2*pi)
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value);tmp=UI.rmquote(tmp); nextSibling.innerHTML='&nbsp;'+tmp;UI.render_canvas(nextSibling);">exe</button><span></span><br>
+
+</li><li class="li-itemize"><code>plotlist(l)</code>: plot a list <code>l</code>,
+i.e. draws a polygonal line 
+with vertices <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mo stretchy="false">(</mo><mi>i</mi><mo>,</mo><msub><mi>l</mi> <mi>i</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding='application/x-tex'>(i,l_i)</annotation></semantics></math> (index <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>i</mi></mrow><annotation encoding='application/x-tex'>i</annotation></semantics></math> starts at 0).<br>
+<code>plotlist([X1,Y1],[X2,Y2],...)</code> 
+polygonal line with vertices the points of coordinates <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mo stretchy="false">(</mo><msub><mi>X</mi> <mi>i</mi></msub><mo>,</mo><msub><mi>Y</mi> <mi>i</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding='application/x-tex'>(X_i,Y_i)</annotation></semantics></math> 
+</li><li class="li-itemize"><code>scatterplot(X,Y)</code>, <code>polygonscatterplot(X,Y)</code>
+for two lists <code>X,Y</code> of the same size,
+draws the points or a polygonal line of vertices <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mo stretchy="false">(</mo><msub><mi>X</mi> <mi>i</mi></msub><mo>,</mo><msub><mi>Y</mi> <mi>i</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding='application/x-tex'>(X_i,Y_i)</annotation></semantics></math> 
+</li><li class="li-itemize"><code>histogram(l,class_min,class_size)</code>
+plots the histogram of data in <code>l</code>, class size
+<code>class_size</code>, first class starts at
+<code>class_min</code>. Example: check the random generator quality<br>
+
+<textarea onkeypress="UI.ckenter(event,this,1)" 
+style="width:400px;font-size:large">l:=ranv(500,normald,0,1); histogram(l,-4,0.25); plot(normald(x),x,-4,4)
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value);tmp=UI.rmquote(tmp); nextSibling.innerHTML='&nbsp;'+tmp;UI.render_canvas(nextSibling);">exe</button><span></span><br>
+
+</li><li class="li-itemize"><code>plotcontour(f(x,y),[x=xmin..xmax,y=ymin..ymax],[l0,l1,...])</code>
+plot implicit curves <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo><mo>=</mo><msub><mi>l</mi> <mn>0</mn></msub><mo>,</mo><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo><mo>=</mo><msub><mi>l</mi> <mn>1</mn></msub><mo>,</mo><mo>.</mo><mo>.</mo><mo>.</mo></mrow><annotation encoding='application/x-tex'>f(x,y)=l_0, f(x,y)=l_1,...</annotation></semantics></math>.
+</li><li class="li-itemize"><code>plotfield(f(t,y),[t=tmin..tmax,y=ymin..ymax])</code>
+plot the field of tangents for the differential equation
+<math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>y</mi><mo>&prime;</mo><mo>=</mo><mi>f</mi><mo stretchy="false">(</mo><mi>t</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><annotation encoding='application/x-tex'>y&apos;=f(t,y)</annotation></semantics></math>. Add the optional last parameter <code>,plotode=[t0,y0]</code>
+to plot simultaneously the solution with initial condition
+<math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>y</mi><mo stretchy="false">(</mo><msub><mi>t</mi> <mn>0</mn></msub><mo stretchy="false">)</mo><mo>=</mo><msub><mi>y</mi> <mn>0</mn></msub></mrow><annotation encoding='application/x-tex'>y(t_0)=y_0</annotation></semantics></math>. Example <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>y</mi><mo>&prime;</mo><mo>=</mo><mi>sin</mi><mo stretchy="false">(</mo><mi>t</mi><mi>y</mi><mo stretchy="false">)</mo></mrow><annotation encoding='application/x-tex'>y&apos;=\sin(ty)</annotation></semantics></math> for <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>t</mi><mo>&Element;</mo><mo stretchy="false">[</mo><mo lspace="verythinmathspace" rspace="0em">&minus;</mo><mn>3</mn><mo>,</mo><mn>3</mn><mo stretchy="false">]</mo></mrow><annotation encoding='application/x-tex'>t \in [&#x2d;3,3]</annotation></semantics></math>
+and <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>y</mi><mo>&Element;</mo><mo stretchy="false">[</mo><mo lspace="verythinmathspace" rspace="0em">&minus;</mo><mn>2</mn><mo>,</mo><mn>2</mn><mo stretchy="false">]</mo></mrow><annotation encoding='application/x-tex'>y \in [&#x2d;2,2]</annotation></semantics></math><br>
+
+<textarea onkeypress="UI.ckenter(event,this,1)" 
+style="width:400px;font-size:large">plotfield(sin(t*y),[t=-3..3,y=-3..3],plotode=[0,1])
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value);tmp=UI.rmquote(tmp); nextSibling.innerHTML='&nbsp;'+tmp;UI.render_canvas(nextSibling);">exe</button><span></span><br>
+
+N.B.: <code>plotode</code> may be used outside of <code>plotfield</code>.
+</li><li class="li-itemize">For simultaneous plots, write commands separated by <code>;</code>
+</li></ul><p>
+If a command returns an arc of curve, the trace mode is active by
+default on the addin in 2 parts for the FXCG50 or on the addin
+for the monochrom model. In this mode, typing the left or right key will move a
+pointer on the active arc of curve, and display the pointer
+coordinates (and the parameter value for parametric curves), and
+a tangent vector (speed). If there are several curves, press up or
+down to change active curve. Type F2 to get info on the active curve,
+then EXE to see a table of value.</p><p>From F1 menu, if you select the curve study item (shortcut
+<math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>x</mi><mo>,</mo><mi>&theta;</mi><mo>,</mo><mi>t</mi></mrow><annotation encoding='application/x-tex'>x,\theta,t</annotation></semantics></math> key), you can add a normal vector pointing to the
+center of curvature (F4), and/or the osculating circle and radius
+of curvature. From the curve study menu, you can also move
+the pointer to a location, or to a remarkable point: root, horizontal
+or vertical tangent, inflexion point, intersection with another curve
+arc (limited to intersection of function graphs on monochrom Casio). 
+You can also compute an arc length or
+the area under the curve between pointer and mark.</p><p>When a curve is active, the variables <code>X0,X1,X2,Y0,Y1,Y2</code>
+are set with the expressions of position, speed and acceleration. When
+you search a root, horizontal tangent, inflexion, arc length or area
+under curve, variables are set with the last value.</p><p>For display options, press the OPTN key:
+</p><ul class="itemize"><li class="li-itemize">
+<code>display=color</code> color option: 
+select a color then press F2, for example
+
+<textarea onkeypress="UI.ckenter(event,this,1)" 
+style="width:400px;font-size:large">plot(sin(x),display=red)
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value);tmp=UI.rmquote(tmp); nextSibling.innerHTML='&nbsp;'+tmp;UI.render_canvas(nextSibling);">exe</button><span></span><br>
+
+</li><li class="li-itemize"><code>display=line_width_2</code> to <code>display=line_width_8</code>:
+change segments width (including inside polygonal line used to
+plot a curve).
+Simultaneous display options should be added with <code>+</code>.
+For example <code>display=red+line_width_2</code>
+</li><li class="li-itemize">Circles and rectangles with edges parallel to the coordinate
+axis may be filled with 
+<code>display=filled</code> (this attribute might be added to other attributes)
+</li><li class="li-itemize">If you want to define the display window (overwriting
+the autoscale computation), select <code>gl_x</code> or/and <code>gl_y</code> 
+and add an <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>x</mi></mrow><annotation encoding='application/x-tex'>x</annotation></semantics></math> or <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>y</mi></mrow><annotation encoding='application/x-tex'>y</annotation></semantics></math> interval, for example 
+
+<textarea onkeypress="UI.ckenter(event,this,1)" 
+style="width:400px;font-size:large">gl_x=-2..2;gl_y=-1..4;plot(exp(x))
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value);tmp=UI.rmquote(tmp); nextSibling.innerHTML='&nbsp;'+tmp;UI.render_canvas(nextSibling);">exe</button><span></span><br>
+
+Note that <code>gl_</code> commands must preced the plotting command.
+</li><li class="li-itemize">If you want to remove axes, select <code>axes</code> and press F2
+(<code>axes=0</code>). Like <code>gl_</code> commands, <code>axes=0</code>
+must preced the plotting command. Axes can be removed interactively
+when the graph screen is displayed by pressing SIN.
+</li></ul>
+<!--TOC section id="sec20" Programs-->
+<h2 id="sec20" class="section">6  Programs</h2><!--SEC END --><p>
+You can program either with Xcas-like syntax (English or French) 
+or with Python-like syntax.</p><p>Example : function defined by an algebraic expression
+<code>nom_fonction(parametres):=expression</code>
+for example simple confidence interval for a frequency <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>p</mi></mrow><annotation encoding='application/x-tex'>p</annotation></semantics></math> in a sample
+of size <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>N</mi></mrow><annotation encoding='application/x-tex'>N</annotation></semantics></math><br>
+
+<textarea onkeypress="UI.ckenter(event,this,1)" 
+style="width:400px;font-size:large">F(P,N):=[P-1/sqrt(N),P+1/sqrt(N)]
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value);tmp=UI.rmquote(tmp); nextSibling.innerHTML='&nbsp;'+tmp;UI.render_canvas(nextSibling);">exe</button><span></span><br>
+<br>
+Test 
+<textarea onkeypress="UI.ckenter(event,this,1)" 
+style="width:400px;font-size:large">F(0.4,30)
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value);tmp=UI.rmquote(tmp); nextSibling.innerHTML='&nbsp;'+tmp;UI.render_canvas(nextSibling);">exe</button><span></span><br>
+</p><p>Second example : more precise confidence interval for a frequency <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>p</mi></mrow><annotation encoding='application/x-tex'>p</annotation></semantics></math>
+in a sample of size <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>N</mi></mrow><annotation encoding='application/x-tex'>N</annotation></semantics></math>:<br>
+
+<textarea onkeypress="UI.ckenter(event,this,1)" 
+style="width:400px;font-size:large">f(P,N):=[P-1.96*sqrt(P*(1-P)/N),P+1.96*sqrt(P*(1-P)/N)]
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value);tmp=UI.rmquote(tmp); nextSibling.innerHTML='&nbsp;'+tmp;UI.render_canvas(nextSibling);">exe</button><span></span><br>
+
+To avoid computing twice the same quantity, one can insert
+a local variable. 
+The commandline is not well adapted to write these kinds
+of functions. For non algebraic functions, it is best to run the 
+program editor. Press F6, select Script Editor, clear the editor if it
+is not empty (F6 Clear) and 
+type with the help of test (F1), loop (F2)
+for programming structures
+the following program, in Xcas syntax:
+
+<textarea onkeypress="UI.ckenter(event,this,1)" 
+style="width:400px;font-size:large">function f(P,N) 
+local D; 
+D:=1.96*sqrt(P*(1-P)/N); 
+return [P-D,P+D]; 
+ffunction;
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value);tmp=UI.rmquote(tmp); nextSibling.innerHTML='&nbsp;'+tmp;UI.render_canvas(nextSibling);">exe</button><span></span><br>
+<br>
+or in Python syntax:
+
+<textarea onkeypress="UI.ckenter(event,this,1)" 
+style="width:400px;font-size:large">
+def f(P,N):
+D=1.96*sqrt(P*(1-P)/N)
+return [P-D,P+D]
+
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value);tmp=UI.rmquote(tmp); nextSibling.innerHTML='&nbsp;'+tmp;UI.render_canvas(nextSibling);">exe</button><span></span><br>
+
+Type EXE to check the syntax. Once
+the program is correct, save it (F6 2), then type EXIT. Now you
+can call your program from the commandline like this<br>
+<code>f(0.5,30)</code></p><p>Third example : a loop printing integer squares
+from 1 to <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>n</mi></mrow><annotation encoding='application/x-tex'>n</annotation></semantics></math> in Python syntax.
+Check that Python syntax is enabled in the F6 or shift-SETUP menu, 
+if it is not checked, check it.
+Open F6 Script Editor, if there is some old script source,
+clear it (F6 Clear).
+Select <code>f(x):=</code> from F2 (or from F4, Program, function def), 
+you should get <code>def f(x):</code>.
+Replace <code>x</code> by <code>n</code> 
+(press F5 to lock the keyboard in alpha lowercase), move to the end of
+the line and press shift-EXE to input a newline.
+Type Shift-PRGM then <code>3 for</code>, then F5 J space alpha, then
+Shift-PRGM then <code>6 in range(a,b)</code>. Type <code>1,n+1)</code> 
+then F1 (<code>:</code>). Type shift-EXE to insert a newline
+then Alpha SPACE,
+F4 (Cmds), EXE (<code>1 All</code>), P, R select <code>print</code> with the cursor 
+then type EXE, type <code>j,j^2)</code> then EXE.
+
+</p><pre class="verbatim">def f(n):
+  for j in range(1,n+1):
+    print(j,j^2)
+</pre><p> 
+<button onclick="var field=parentNode.previousSibling; var tmp=field.innerHTML;if(tmp.length==0) tmp=field.value;var t=createElement('TEXTAREA');t.style.fontSize=16;t.cols=60;t.rows=10;var tmp1=UI.ltgt(tmp);t.value=tmp1[0];tmp=UI.caseval(tmp);tmp=UI.rmquote(tmp);nextSibling.innerHTML=tmp; UI.render_canvas(nextSibling); field.parentNode.insertBefore(t,field);field.parentNode.removeChild(field);">exe</button><span></span><br>
+
+
+Inside Xcas <code>^</code> means power, <code>**</code> is also accepted like in
+Python.</p><p>Now, type EXE (or F6, select <code>1. Check syntax</code>). If syntax is correct,
+you will see <code>Success</code> in the status line. Otherwise, the
+first error line number and token will be displayed and cursor will
+be positionned at the line where the error was detected. Note that
+the error may be before this line but it was only detected later. Note
+also that if you are using Python syntax compatibility, programming
+structures are translated into Xcas, errors are displayed after
+translation, therefore you might see token errors like <code>end</code>
+that were added by the translator.</p><p>If the program is correct, you can save it with the F6 menu (save or save as).
+You can run it from the commandline by pressing EXIT then for
+example <code>f(10)</code> should display all squares from 1 to 10.</p><p>The turtle is a nice way to learn programming. The turtle is a small
+robot that you can move, it handles a pen that marks its path.
+Type F6, Script Editor, then F6 Clear. Type shift-QUIT select
+<code>efface</code> which means clear the screen. You can
+access to the turtle commands using shift-QUIT (move the cursor to
+a command and press F6 for help). For example try <code>avance</code>
+(forward). Checking the syntax (EXE) 
+will display the turtle window moves.
+You can enter several moves in your script, and organize them 
+inside tests, loops and functions.
+For example:
+</p><pre class="verbatim">function square(n)
+  repete(4,avance n,tourne_gauche);
+ffunction:;
+  
+efface;
+for n from 1 to 10 do
+  square(10*n);
+od;
+</pre><p>Another example of non algebraic function: the euclidean algorithm
+to compute the GCD of two integers. 
+Press shift-EXE to insert a newline. <code>!</code> is in the
+submenu <code>Programmation_cmds</code> (11, shortcut <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>X</mi><mo>,</mo><mi>&theta;</mi><mo>,</mo><mi>T</mi></mrow><annotation encoding='application/x-tex'>X,\theta,T</annotation></semantics></math>)
+or in the test F1 menu.
+Xcas syntax
+
+</p><pre class="verbatim">function pgcd(a,b)
+  while b!=0 do
+    a,b:=b,irem(a,b);
+  od;
+  return a;
+ffunction
+</pre><p> 
+<button onclick="var field=parentNode.previousSibling; var tmp=field.innerHTML;if(tmp.length==0) tmp=field.value;var t=createElement('TEXTAREA');t.style.fontSize=16;t.cols=60;t.rows=10;var tmp1=UI.ltgt(tmp);t.value=tmp1[0];tmp=UI.caseval(tmp);tmp=UI.rmquote(tmp);nextSibling.innerHTML=tmp; UI.render_canvas(nextSibling); field.parentNode.insertBefore(t,field);field.parentNode.removeChild(field);">exe</button><span></span><br>
+
+
+Python syntax
+
+</p><pre class="verbatim">def pgcd(a,b):
+  while b!=0:
+    a,b=b,a % b
+  return a
+</pre><p> 
+<button onclick="var field=parentNode.previousSibling; var tmp=field.innerHTML;if(tmp.length==0) tmp=field.value;var t=createElement('TEXTAREA');t.style.fontSize=16;t.cols=60;t.rows=10;var tmp1=UI.ltgt(tmp);t.value=tmp1[0];tmp=UI.caseval(tmp);tmp=UI.rmquote(tmp);nextSibling.innerHTML=tmp; UI.render_canvas(nextSibling); field.parentNode.insertBefore(t,field);field.parentNode.removeChild(field);">exe</button><span></span><br>
+
+
+Check with 
+<textarea onkeypress="UI.ckenter(event,this,1)" 
+style="width:400px;font-size:large">pgcd(12345,3425)
+</textarea><button onclick="previousSibling.style.display='inherit';var tmp=UI.caseval(previousSibling.value);tmp=UI.rmquote(tmp); nextSibling.innerHTML='&nbsp;'+tmp;UI.render_canvas(nextSibling);">exe</button><span></span><br>
+</p><p>If your program has runtime errors or if you want
+to see it run step by step, run <code>debug</code> on it,
+for example<br>
+<code>debug(pgcd(12345,3425))</code></p><p>Unlike adaptations of Micro-Python by calculator manufacturers (including
+Casio), the Python syntax in Xcas is fully integrated.
+You can therefore use all Xcas commands and data types in your programs.
+This corresponds approximatively to importing Python modules
+<code>math</code>, <code>cmath</code>, <code>random</code>,
+<code>scipy</code>, <code>numpy</code>, <code>turtle</code>, <code>giacpy</code>.
+There is also a small
+pixelised graphic commands set
+(<code>set_pixel(x,y,c)</code>, <code>set_pixel()</code> to synchronize
+display, <code>clearscreen()</code>, <code>draw_line(x1,y1,x2,y2,c)</code>, 
+<code>draw_polygon([[x1,y1],[x2,y2],...],c)</code>,
+<code>draw_rectangle(x,y,w,h,c)</code>, <code>draw_circle(x,y,r,c)</code>,
+the color+width+filled <code>c</code> parameter is optional,
+<code>draw_arc(x,y,rx,ry,t1,t2,c)</code> draws an ellipsis arc).
+And you can somewhat replace <code>matplotlib</code> 
+with graphic commands of <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>&chi;</mi></mrow><annotation encoding='application/x-tex'>\chi</annotation></semantics></math>CAS
+(<code>point</code>, <code>line</code>, <code>segment</code>, <code>circle</code>,
+<code>barplot</code>, <code>histogram</code> and all <code>...plot...</code>
+commands). Plus you have natural access to data types
+like rationnals or expressions, and you can run CAS commands on them.
+The complete list of commands available on the calculator
+is given in appendix. For documentation on commands not listed
+in the catalog categories, please refer to Xcas documentation.</p>
+<!--TOC section id="sec21" The 2d editor.-->
+<h2 id="sec21" class="section">7  The 2d editor.</h2><!--SEC END --><p>
+If a computation returns an expression, it will be displayed in the 2d 
+expression editor. This also happens if you press F3 when the selected
+level is an expression, or if you press F3 from the commandline if the line
+is empty or contains a syntaxically correct expression.</p><p>Once the 2d editor is open, the expression is displayed in full screen and
+all or part of the expression is selected. One can run a command
+on the selection (from the menus or from the keyboard), or edit 
+(in 1d mode) the selection. This is an efficient way to rewrite
+expressions or edit them.</p><p>Example 1 : enter
+<math xmlns='http://www.w3.org/1998/Math/MathML' display='block'><semantics><mrow><munder><mi>lim</mi> <mrow><mi>x</mi><mo>&rightarrow;</mo><mn>0</mn></mrow></munder><mfrac><mrow><mi>sin</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mi>x</mi></mfrac></mrow><annotation encoding='application/x-tex'>\lim_{x \rightarrow 0} \frac{\sin(x)}{x} </annotation></semantics></math>
+From an empty commandline, type F3 (view), you should see 0 selected.
+Type x then EXE, this will replace 0 by x selected. Type SIN, now
+<math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>sin</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding='application/x-tex'>\sin(x)</annotation></semantics></math> should be selected. Type the division key (above -), you
+should see <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mfrac><mrow><mi>sin</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mn>0</mn></mfrac></mrow><annotation encoding='application/x-tex'>\frac{\sin(x)}{0}</annotation></semantics></math> with 0 selected, type x then EXE,
+you should now see <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mfrac><mrow><mi>sin</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mi>x</mi></mfrac></mrow><annotation encoding='application/x-tex'>\frac{\sin(x)}{x}</annotation></semantics></math> with x (below the fraction)
+selected. Type the up arrow key, now <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mfrac><mrow><mi>sin</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mi>x</mi></mfrac></mrow><annotation encoding='application/x-tex'>\frac{\sin(x)}{x}</annotation></semantics></math>
+should be selected. Now type F2 4 (for limit). The expression
+is ready to eval, type EXE to copy it to the commandline and EXE
+again to eval it. For the same limit at <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mo lspace="verythinmathspace" rspace="0em">+</mo><mn>&infin;</mn></mrow><annotation encoding='application/x-tex'>+\infty</annotation></semantics></math>, before leaving
+the 2d editor with EXE,
+move the selection with the right arrow key, then type F1 8 (oo) EXE.</p><p>Example 2 : 
+<math xmlns='http://www.w3.org/1998/Math/MathML' display='block'><semantics><mrow><msubsup><mo>&Integral;</mo> <mn>0</mn> <mrow><mo lspace="verythinmathspace" rspace="0em">+</mo><mn>&infin;</mn></mrow></msubsup><mfrac><mn>1</mn><mrow><msup><mi>x</mi> <mn>4</mn></msup><mo>+</mo><mn>1</mn></mrow></mfrac><mspace width="mediummathspace"/><mi>d</mi><mi>x</mi></mrow><annotation encoding='application/x-tex'>\int_0^{+\infty} \frac{1}{x^4+1} \ dx  </annotation></semantics></math>
+From an empty commandline, type F3 (view), then F2 3 (integrate),
+you should see:
+<math xmlns='http://www.w3.org/1998/Math/MathML' display='block'><semantics><mrow><msubsup><mo>&Integral;</mo> <mn>0</mn> <mn>1</mn></msubsup><mn>0</mn><mspace width="mediummathspace"/><mi>d</mi><mi>x</mi></mrow><annotation encoding='application/x-tex'>\int_0^1 0 \ dx </annotation></semantics></math>
+with <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>x</mi></mrow><annotation encoding='application/x-tex'>x</annotation></semantics></math> selected. We must modify the 1 (upper bound) and
+the 0 (integrand). Press left arrow key, this will select the
+integrand 0, type <code>1/(x^4+1)</code> EXE, then left arrow key F1 8 EXE.
+Type again EXE to copy to commandline, EXE again to run the computation,
+the result will be displayed in the 2d editor, EXE will leave the 2d
+editor, with the integral and its value in the history.</p><p>Example 3 : compute and simplify
+<math xmlns='http://www.w3.org/1998/Math/MathML' display='block'><semantics><mrow><mo>&Integral;</mo><mfrac><mn>1</mn><mrow><msup><mi>x</mi> <mn>4</mn></msup><mo>+</mo><mn>1</mn></mrow></mfrac><mspace width="mediummathspace"/><mi>d</mi><mi>x</mi></mrow><annotation encoding='application/x-tex'>\int \frac{1}{x^4+1} \ dx  </annotation></semantics></math>
+From an empty commandline, type F3 (view), then F2 3 (integrate),
+you should see
+<math xmlns='http://www.w3.org/1998/Math/MathML' display='block'><semantics><mrow><msubsup><mo>&Integral;</mo> <mn>0</mn> <mn>1</mn></msubsup><mn>0</mn><mspace width="mediummathspace"/><mi>d</mi><mi>x</mi></mrow><annotation encoding='application/x-tex'>\int_0^1 0 \ dx </annotation></semantics></math>
+Move the selection to the lower bound 0 (right arrow key), 
+type DEL, you should see
+<math xmlns='http://www.w3.org/1998/Math/MathML' display='block'><semantics><mrow><mo>&Integral;</mo><mn>0</mn><mspace width="mediummathspace"/><mi>d</mi><mi>x</mi></mrow><annotation encoding='application/x-tex'>\int 0 \ dx </annotation></semantics></math>
+selected. With the down arrow key, select 0, type <code>1/(x^4+1)</code> EXE,
+EXE copy to the commandline, EXE to run the compuation, the result
+is now displayed in the 2d editor.<br>
+With the arrow key, select one of the arctangent, type F1 EXE (simplify),
+this will make a partial simplification, do the same on the second
+arctangent.<br>
+For a more complete simplification, we will collect the logarithms.
+The first step is to exchange two terms of the main sum so that the
+logarithms are grouped. Select one of the logarithm with the arrow keys,
+then type
+</p><ul class="itemize"><li class="li-itemize">
+CG10,20,50 : shift-left or right arrow key
+</li><li class="li-itemize">fx-9860GIII: F5 left or right arrow key, then ALPHA
+</li></ul><p>
+this will exchange the selection with the right or left sibling.
+Now type ALPHA right or left arrow key to extend the selection adding
+the right or left sibling. Once the two logarithm terms are selected,
+press F1 2 EXE (factor), decrease the selection to the numerator,
+type F4 EXE (All), type the letters l, n, c, this moves in the
+catalog to the first command beginning with <code>lnc</code>, select
+<code>lncollect</code>, EXE and F6 (eval).</p>
+<!--TOC section id="sec22" Managing sessions-->
+<h2 id="sec22" class="section">8  Managing sessions</h2><!--SEC END -->
+<!--TOC subsection id="sec23" Modifying a session-->
+<h3 id="sec23" class="subsection">8.1  Modifying a session</h3><!--SEC END --><p>
+With the up/down cursor keys, you can move in the history, the current
+level is printed with reverse colors.</p><p>You can move one level in another position with ALPHA-up and ALPHA-down.
+You can delete a level with the DEL key (the level is copied into 
+the clipboad).</p><p>You can modify an existing level with F3 or ALPHA-F3. With F3, the 2d
+editor is called if the level is an expression, with ALPHA-F3 the level
+is edited in the text (program) editor. Type EXIT if you want to cancel
+modifications, or EXE if you confirm the modifications. If you confirm
+the modifications, the commandlines below the current level will 
+automatically be re-evaled. This way, if you modify for example
+a level like <code>A:=1</code>, all levels below that depend on the value
+of <code>A</code> will be up to date. If you want to do that several times,
+it is best to introduce a parameter with the F6 Parameter wizzard. Then
+pressing + or - on the <code>assume(...)</code> or <code>parameter</code> level
+will modify the value of the parameter (press * or / for faster move).</p>
+<!--TOC subsection id="sec24" Variables-->
+<h3 id="sec24" class="subsection">8.2  Variables</h3><!--SEC END --><p>
+Press VARS to see which variables are assigned to a value. Select a variable
+name, press EXE to copy it to the commandline, DEL will input the command
+that erases the variable (confirm with EXE). <code>restart</code> will
+purge all variables at once (press <code>AC/ON</code> to clear the history
+and start a fresh new session). <code>assume</code> is a command to 
+make assumptions on a variable, like <code>assume(x&gt;5)</code> (<code>&gt;</code> 
+can be accessed from the shift-PRGM menu).</p>
+<!--TOC subsection id="sec25" Archiving and exchanging with Xcas-->
+<h3 id="sec25" class="subsection">8.3  Archiving and exchanging with Xcas</h3><!--SEC END --><p>
+On the calculator, go back to the history (type EXIT if you are in the
+programming editor or the 2d expression editor). 
+From the F6 menu, you can save/restore sessions in the
+calculator flash memory. Files have the <code>xw</code> extensions. They
+can be copied to your computer (connect the calc, choose F1 USB key),
+and there they may be opened with Xcas or Xcas for Firefox.
+From Xcas, choose the File menu then Open file, then select 
+all type of files and open the session file.
+From 
+<a href="https://www-fourier.univ-grenoble-alpes.fr/~parisse/xcasfr.html">Xcas for Firefox</a>, press the Load button.</p><p>Conversely you can save a session from Xcas (choose File, Export to Khicas)
+or from Xcas for Firefox (choose Export at the right of the session name).</p>
+<!--TOC section id="sec26" Keyboard shortcuts.-->
+<h2 id="sec26" class="section">9  Keyboard shortcuts.</h2><!--SEC END --><p> <a id="sec:shortcuts"></a></p>
+<!--TOC subsection id="sec27" KhiCAS 50 and 90 versions (2 files)-->
+<h3 id="sec27" class="subsection">9.1  KhiCAS 50 and 90 versions (2 files)</h3><!--SEC END --><p>
+These shortcuts are valid inside the shell and text programming
+editor. With default configuration:
+</p><ul class="itemize"><li class="li-itemize">
+shift INS: table of ASCII characters
+</li><li class="li-itemize">F1-F6, shift-F1 to shift-F6, alpha-F1 to alpha-F6: see legend at screen bottom
+</li><li class="li-itemize">OPTN: fast menu for color options
+</li><li class="li-itemize">shift-OPTN: programming commands
+</li><li class="li-itemize">VARS: variables list
+</li><li class="li-itemize">shift-PRGM: fast menu for programming
+</li><li class="li-itemize">MENU: back to main Casio menu 
+</li><li class="li-itemize">shift-SETUP: setup
+</li><li class="li-itemize">EXIT: switch from shell to editor
+</li><li class="li-itemize">shift-EXIT: display logo turtle screen
+</li><li class="li-itemize">ALPHA-EXIT: if alpha is not locked, displays last 2d or 3d graph
+</li><li class="li-itemize">shift angle: fast menu for geometry
+</li><li class="li-itemize">fraction: <code> % </code> inside shell, indentation in editor, force
+sheet reeval in spreadsheet
+</li><li class="li-itemize">shift-fraction: fast menu for poynomial arithmetic in shell,
+completion in editor
+</li><li class="li-itemize">touche S<math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mo>&leftrightarrow;</mo></mrow><annotation encoding='application/x-tex'>\leftrightarrow</annotation></semantics></math>D: additional apps
+(spreadsheet, finance, ...). Inside spreadsheet, display sheet graphs.
+</li><li class="li-itemize">shift <code>,</code>: <code>;</code>
+</li><li class="li-itemize">shift <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mo>&rightarrow;</mo></mrow><annotation encoding='application/x-tex'>\rightarrow</annotation></semantics></math>: <code>:=</code> or <code>:</code> depends on active interpreter
+Xcas or Python
+</li><li class="li-itemize">AC/ON: cancel selection or cancel search/replace
+</li><li class="li-itemize">shift CAPTURE: save session or file
+</li><li class="li-itemize">shift CLIP: begin selection or copy selection to clipboard
+</li><li class="li-itemize">shift PASTE: paste clipboard
+</li><li class="li-itemize">shift CATALOG: list of all Xcas commands
+</li><li class="li-itemize">shift FORMAT: programming commands
+</li><li class="li-itemize">shift 6: fast menu with <code>&lt;&gt;_!</code> and <code>comb, rand, binomial,
+  normald</code>
+</li><li class="li-itemize">shift List: fast list menu 
+</li><li class="li-itemize">shift Mat: fast matrix menu
+</li><li class="li-itemize">shift 3: menu rapide algèbre linéaire
+</li><li class="li-itemize">shift EXE: next line in editor
+</li></ul><p>
+You can modify fast menus shortcuts by editing the file
+<code>FMENU.py</code>. Delete the file from Memory Casio application
+to reset to default configuration.</p>
+<!--TOC subsection id="sec28" KhiCAS short version (1 file))-->
+<h3 id="sec28" class="subsection">9.2  KhiCAS short version (1 file))</h3><!--SEC END --><ul class="itemize"><li class="li-itemize">
+F1 to F3 : depends on mode (Python/Xcas) and shift/alpha state,
+see labels 
+</li><li class="li-itemize">F4: commands catalog.
+</li><li class="li-itemize">F5: uppercase to lowercase switch.
+If alpha mode is not active, locks the keyboard in alpha lowercase.
+</li><li class="li-itemize">F6: File menu
+</li><li class="li-itemize">cursor down from shell or shift fraction key from program editor
+(G key): completion/online help
+</li><li class="li-itemize"><code>(-)</code> in the text editor: returns the <code>_</code> character. 
+</li><li class="li-itemize">shift PRGM: programming commands or characters
+</li><li class="li-itemize">OPTN: all options
+</li><li class="li-itemize">shift-QUIT: turtle commands
+</li><li class="li-itemize">shift-List: create or edit a list, list commands
+</li><li class="li-itemize">shift-Mat: create or edit a matrix, matrix commands
+</li><li class="li-itemize">S<math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mo>&leftrightarrow;</mo></mrow><annotation encoding='application/x-tex'>\leftrightarrow</annotation></semantics></math>D key: real number commands
+</li><li class="li-itemize">yellow shifted S<math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mo>&leftrightarrow;</mo></mrow><annotation encoding='application/x-tex'>\leftrightarrow</annotation></semantics></math>D key: integer commands
+</li><li class="li-itemize">angle key: complex commands
+</li><li class="li-itemize">yellow shifted fraction: plot commands
+</li><li class="li-itemize">fraction key: special characters/proba in history, indentation in
+text editor
+</li><li class="li-itemize">red r key: <code>abs</code>
+</li><li class="li-itemize">red <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>&theta;</mi></mrow><annotation encoding='application/x-tex'>\theta</annotation></semantics></math> key: <code>arg</code>
+</li></ul><p>In programming editor
+</p><ul class="itemize"><li class="li-itemize">
+shift-cursor key: move to begin/end of line or file
+</li><li class="li-itemize">shift CLIP: begin selection. 
+Move the cursor to the selection end, type DEL to remove the selection
+(it will be copied to clipboard) or again shift-CLIP to copy selection
+to clipboard without removal.
+Type AC/ON to cancel selection.
+</li><li class="li-itemize">EXE: if a search/replace is currently active (F6 6)
+find next word occurence. Otherwise parse/execute.
+</li><li class="li-itemize">shift EXE: add a newline.
+</li><li class="li-itemize">DEL: remove selection or previous character if no selection active
+</li><li class="li-itemize">shift PASTE: copy clipboard
+</li><li class="li-itemize">Shift-INS (touche DEL): 
+remove current line and copy to clipboard
+</li><li class="li-itemize">AC/ON: cancel selection or cancel search/replace
+or check syntax (like F6 1)
+</li><li class="li-itemize">EXIT: leave text editor to the commandline.
+Type EXIT again to come back to the text editor.
+</li></ul>
+<!--TOC section id="sec29" Remarks-->
+<h2 id="sec29" class="section">10  Remarks</h2><!--SEC END --><p>
+On color models, you must first press MENU before shutting down 
+the calculator with shift ON. When you press ON again, press MENU to
+go back in KhiCAS.</p><p>If you connect a color model to your PC as a USB disk, 
+you will have to press a key after you have pressed F1, otherwise
+nothing happens.</p><p>If KhiCAS is inside a long computation, you should be able to interrupt
+it by pressing AC/ON. If it does not interrupt, you may have to press
+the reset button.</p><p>If KhiCAS crashes, you will see a message SYSTEM ERROR etc.. Try to
+press the MENU key and open any other application. If you are lucky,
+this will save your session and you can go back and reopen KhiCAS
+without having to reinitialize the calculator.</p><p>The memory available for computations is about 500K with the color g3a addin
+on the CG50, and 58K on the monochrom g1a addin. On the CG50, it is
+recommended to check periodically the remaining free memory by
+pressing the VAR key. If it is less than 100K, press MENU, open
+any other app, press MENU again and reopen KhiCAS with your session
+and a fresh unfragmented memory.</p>
+<!--TOC section id="sec30" More complete version for the CG50-->
+<h2 id="sec30" class="section">11  More complete version for the CG50</h2><!--SEC END --><p> <a id="sec:2"></a>
+The light version in one file is not a full version of Xcas because the maximal size
+for a Casio add-in is too small (2 Mo). A more complete version of
+<math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>&chi;</mi></mrow><annotation encoding='application/x-tex'>\chi</annotation></semantics></math>CAS for the FXCG50 is distributed in 2 files (one of them is run from a section
+of the RAM of the FXCG50 that is currently not used by Casio).</p><p>This more complete version has more Xcas commands (like geometry
+commands), a 3d rendering engine, some additional apps (like a
+formal spreadsheet or a financial application) and a port
+of MicroPython 1.12 with more modules than the Casio port of
+MicroPython 1.09.</p><p>See section <a href="#sec%3Ainstall">1</a> to install.</p>
+<!--TOC subsection id="sec31" MicroPython 1.12-->
+<h3 id="sec31" class="subsection">11.1  MicroPython 1.12</h3><!--SEC END --><p>
+You can select the shell interpreter by typing shift SETUP. The menu
+background color of the shell reflects the active interpreter
+(yellow=MicroPython, magenta or cyan for Xcas native or Xcas Python
+compatible).</p><p>Available modules: turtle (more complete version, with filled objects),
+graphic (more complete than casioplot), matplotl, arit (integer
+arithmetic), linalg/numpy (linear algebra, matrices), ulab (scipy
+compatibility), cas (CAS from Python).</p>
+<!--TOC subsection id="sec32" 3d and 4d graphs-->
+<h3 id="sec32" class="subsection">11.2  3d and 4d graphs</h3><!--SEC END --><p>One can plot
+2 variables function or parametric plots, cones, solids, planes, ...
+For example type <code>F4 * 5 F2 EXE</code> to draw a cube or <code>shift F4
+1</code> to select the plot command, and enter <code>x^2-y^2</code>.</p><p>For fonctions plots from <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>&Copf;</mi></mrow><annotation encoding='application/x-tex'>\mathbb{C}</annotation></semantics></math> to
+<math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>&Copf;</mi></mrow><annotation encoding='application/x-tex'>\mathbb{C}</annotation></semantics></math>, run the <code>plot</code> command with argument
+a complex valued expression of 2 variables (real and imaginary parts)
+like for example <code>plot((x+i*y)^2-9)</code>. For
+expression depending directly on the complex variable
+(without requiring real/imaginary part), one can use the
+<code>plot3d</code> command, for example
+<code>plot3d(x^2-9)</code> (the <code>plot(x^2-9)</code> command would not
+work, because it is already used for a graph from <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>&Ropf;</mi></mrow><annotation encoding='application/x-tex'>\mathbb{R}</annotation></semantics></math> to
+<math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>&Ropf;</mi></mrow><annotation encoding='application/x-tex'>\mathbb{R}</annotation></semantics></math>). The modulus is represented along the <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>O</mi><mi>z</mi></mrow><annotation encoding='application/x-tex'>Oz</annotation></semantics></math> axis and
+the argument using raimbow colors: from <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mo lspace="verythinmathspace" rspace="0em">&minus;</mo><mi>&pi;</mi></mrow><annotation encoding='application/x-tex'>&#x2d;\pi</annotation></semantics></math>
+in blue magenta to 0 in green (through yellow orange) and from
+0 to <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>&pi;</mi></mrow><annotation encoding='application/x-tex'>\pi</annotation></semantics></math> via cyan.</p><p>If you need precise options, run the <code>plotfunc</code> command, for example<br>
+<code>plotfunc((x+i*y)^3-1,[x=-2..2,y=-2..2],nstep=500)</code><br>
+will plot <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>z</mi><mo>&rightarrow;</mo><msup><mi>z</mi> <mn>3</mn></msup><mo>&minus;</mo><mn>1</mn></mrow><annotation encoding='application/x-tex'>z \rightarrow z^3&#x2d;1</annotation></semantics></math> from a square in the complex plane
+centered at origin, size 4 with a 500 small reectangles discretization.</p><p>Beware, the 3d rendering engine is slow on the calculator, therefore the
+drawing precision is set to a medium value by default (this impacts
+mostly objects with angles, like polyhedrons). You can modify
+the rendering precision with F2 (faster, less precise) or F3 (slower, more
+precise). 
+Tip : you can increase the CPU speed by running the
+<a href="https://www.planet-casio.com/Fr/programmes/dl.php?id=3710&num=1">Ptune3</a>
+addin.</p><p>If you just want one time a higher
+precision rendering, type <code>^</code> and be patient. If you want to
+interrupt this rendering, press DEL. Use the cursor keys to change the
+viewpoint, 5 to reset to default viewpoint, and <code>-</code> or <code>+</code>
+to zoom in/out. 
+While a cursor key is
+kept pressed, the precision is lower, when the key is released the
+last position is redrawn with the default precision.
+Type F4 to show/hide a second hidden objet, F5 to show/hide
+intermediate points, F6 to show/hide polyhedron edges.</p>
+<!--TOC subsection id="sec33" Interactive geometry application-->
+<h3 id="sec33" class="subsection">11.3  Interactive geometry application</h3><!--SEC END --><p>
+The geometry application lets you construct figures in the 2d plane or
+in 3d space. It is possible to move one point of the figure and
+observe how the construction evolves, illustrating some properties
+(dynamic geometry). Pure geometric constructions may be mixed 
+with function graphs and other analytic constructions.
+This application has two view: the graphic view where the
+figure is rendered and the symbolic view where you see
+the Xcas instructions to construct the figure. The philosophy
+is similar to Geogebra, but with Xcas commands instead.</p><p>You will find here a short description of this application,
+cf. <a href="https://www-fourier.univ-grenoble-alpes.fr/~parisse/casio/geoen.html">here</a> for
+a more complete documentation of the geometry application, with a few
+screenshots.</p>
+<!--TOC subsubsection id="sec34" Modes, graphical and symbolic view-->
+<h4 id="sec34" class="subsubsection">11.3.1  Modes, graphical and symbolic view</h4><!--SEC END --><p>
+Type F6 1 (or S<math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mo>&leftrightarrow;</mo></mrow><annotation encoding='application/x-tex'>\leftrightarrow</annotation></semantics></math>D) to display the list
+of additional applications, then EXE then select an existing figure
+or create a new 2d or 3d figure. You may also open the
+geometry application from an existing graph displayed from the shell
+(for example after running <code>plot(sin(x))</code>)
+by typing F6 then Save figure.</p><p>At startup, you are in graphical view in frame mode. The cursor key
+will modify the viewpoint (move the frame in 2d, rotate viewpoint in 3d).
+Press F4 to change mode. Type EXE to switch to symbolic view or back.
+For example, type F4 3 to enter point mode, move the pointer and press
+EXE where you want to create a point. Or type F4 5 to enter triangle mode
+move the pointer to each vertex and press EXE on each vertex.
+You can move the pointer with the keypad (use shift cursor key for a fast move),
+or if there is an existing
+point, type the name (e.g. type ALPHA A to move the pointer to the point A
+if it has already been defined).</p><p>In a 3d figure, objects will be created in the yellow plane. Press 4 or 6 to
+move this plane. It is recommended to keep a viewpoint with <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>O</mi><mi>z</mi></mrow><annotation encoding='application/x-tex'>Oz</annotation></semantics></math> vertical
+(therefore change viewpoint only with the right and left cursor keys
+that make a rotation of axis <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>O</mi><mi>z</mi></mrow><annotation encoding='application/x-tex'>Oz</annotation></semantics></math>).</p><p>Dynamic geometry howto:
+switch to pointer mode (F4 2), move near an exising point and select
+it with EXE, then move the point with the cursor keys, you will see
+how the whole figure depends on that point, this helps conjectures
+or illustration of some
+geometric properties, like the fact that 3 lines of a triangle have
+a common intersection.</p><p>If you type EXIT in the graphical view, it will reset mode to frame mode
+if you were not in frame mode, or it will switch to symbolic view if
+you were in frame mode. In the symbolic view, you can modifiy existing
+commands or create new geometric objects with new commandlines (one line
+per object). You can save the construction in text format from F6 menu, note
+that the file generated will have a <code>.py</code> extension
+despite the fact that
+it is not a Python script.
+Type EXIT again to leave the geometry application.</p><p>When leaving the geometry application, the figure is saved in
+an Xcas variable that has the same identifier than the filename
+displayed in the symbolic view. You can erase this Xcas variable
+if you want to clear the figure.</p><p><span style="font-weight:bold">Example : circumcircle.</span><br>
+From KhiCAS shell, type F6 1 then select new figure 2d EXE.
+Type F4 5 Triangle, EXE to create the first vertex, move the pointer
+with cursor keys and type EXE for the second vertex, move the pointer
+again and type EXE to create the 3rd vertex and the triangle.</p><p>Long version, construction of the center:
+Type F4 7, select 8 Perpen bisector, move the pointer so that
+only one edge of the triangle is selected (this is displayed
+at the bottom right, something like <code>perpen_bisector D5,D</code>,
+type EXE will create the perpendicular bisector. Move the pointer
+to another edge of the triangle, type EXE to create the 2nd bisector.
+You may optionnaly create the 3rd bisector.
+Then type F4 6, select 4 Single intersection. Move the pointer
+to a perpen bisector, type EXE, move the pointer to another perpen
+bisector and type EXE. This will create the circumcircle center.
+Type F4 4, move the pointer to the center (with the cursor keys
+or by typing ALPHA H or the center name if it is not H), then EXE,
+move to one of the triangle vertex and press EXE.</p><p>Short version with the <code>circumcircle</code> command:
+Type F4 9, select circumcircle, select each vertex with
+pointer move + EXE ((ALPHA A EXE ALPHA B EXE ALPHA C EXE, replace
+A, B, C with the vertices names).</p><p>Symbolic view version:
+If you are in the graphical view, type EXIT to move to the symbolic view.
+Move to the script end and add a newline if required (shift EXE).
+Enter<br>
+<code>c:=circonscrit(A,B,C)</code> EXE</p><p><span style="font-weight:bold">3d Example</span><br>
+Type F6 1 from the shell, then select new 3d figure.
+Then EXIT or EXE to switch to the symbolic view. Then F5 c ALPHA shift =
+F4 uparrow twice, select 3D, EXE 5 for cube, F6 for help on the cube
+command, press F2 to copy+paste the first example in the symbolic
+view. You should see<br>
+<code>c=cube([0,0,0],[1,0,0],[0,1,0])</code><br>
+Type EXE, this display a small cube, type + a few times to zoom in. Then
+EXE to switch back to symbolic view.
+Type shift EXE to begin a new commandline.
+Now we define the vertices of the cube with
+<code>A,B,C,D,E,F,G,H=</code>
+(type ALPHA A , ALPHA B etc.). Then type F4 and uparrow 3 times
+to select Geometry then uparrow 4 times to select
+<code>sommets</code> EXE, put c as argument to get <code>sommets(c)</code>.
+Type EXE to display the cube and the vertices with their names.
+Type EXE again to go back to symbolic view. Then shift EXE to
+enter a new commandline, that will define the plane ABC.
+Type ALPHA P = then F2 to open the fast menu lines and 8, this will
+copy <code>plane(</code>.
+This command takes 3 points as argument (or a cartesian equation), here
+A, B, G, <code>P=plan(A,B,G,</code>. We now add a color to the plane
+with the F3 disp fast menu
+<code>display=filled+green</code>. Check by EXE EXE.
+Go to the next line (shift EXE) and create segment DE
+ALPHA S = F2 select segment command with EXE, type D, E, then F3
+and give a color<br>
+<code>S=segment(D,E,color=cyan)</code>
+The whole construction should be
+</p><pre class="verbatim">c=cube([0,0,0],[1,0,0],[0,1,0])
+A,B,C,D,E,F,G,H=sommets(c)
+P=plan(A,B,G,display=filled+green)
+S=segment(D,E,display=cyan)
+</pre><p>
+Type EXE to display it and use the keypad to change the viewpoint.
+Type EXE or EXIT to go back to symbolic view and EXIT to leave the
+geometry application. Type F1 to save the figure if you did not
+save it from the F6 menu.
+You can access analytic geometry information from KhiCAS shell, for
+example <code>equation(P)</code> (F4 select Geometry submenu) will
+return the cartesian equation of the plane <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>P</mi></mrow><annotation encoding='application/x-tex'>P</annotation></semantics></math>, or
+<code>is_orthogonal(P,S)</code> (F4 Geometry)
+will confirm that the plane <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>P</mi></mrow><annotation encoding='application/x-tex'>P</annotation></semantics></math>
+is orthogonal to the segment <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>S</mi></mrow><annotation encoding='application/x-tex'>S</annotation></semantics></math> (this should be apparent from
+3d rendering).</p>
+<!--TOC subsubsection id="sec35" Cursors-->
+<h4 id="sec35" class="subsubsection">11.3.2  Cursors</h4><!--SEC END --><p>
+Cursors are parametric values that live in a given inteval and may be
+moved by 1% steps from the graphical view. They are created
+with the <code>element</code> command in the symbolic view or from F4
+menu in the graphical view.</p><p><span style="font-weight:bold">Example : quadratic explorer</span><br>
+This example demonstrates how the curve of the parabola of equation
+<math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>y</mi><mo>=</mo><mi>a</mi><msup><mi>x</mi> <mn>2</mn></msup><mo>+</mo><mi>b</mi><mi>x</mi><mo>+</mo><mi>c</mi></mrow><annotation encoding='application/x-tex'>y=ax^2+bx+c</annotation></semantics></math> depends on the value of <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>a</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>c</mi></mrow><annotation encoding='application/x-tex'>a,b,c</annotation></semantics></math>.
+Create 3 cursors from F4 menu of the graphical view
+(for each cursor F4 uparrow 4 times EXE EXE). In the symbolic view
+you should have something like
+</p><pre class="verbatim">a:=element(-1..1)
+b:=element(0..1,0.5)
+c:=element(-1..1)
+</pre><p>
+then add the parabole graph, from graphical view, type F4 0 (for 10 Curves)
+and select plot, or from the symbolic view shift EXE shift F6 and select plot
+fill inside the parenthesis with <code>a*x^2+b*x+c</code> (beware,
+do not forget the <code>*</code>), then EXE.
+From the graphical view, you should see 3 cursors
+<code>a</code>, <code>b</code> and <code>c</code> and the corresponding graph.
+You can now modify the value of <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>a</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>c</mi></mrow><annotation encoding='application/x-tex'>a,b,c</annotation></semantics></math> and see how it affects the shape
+of the parabola. Type F4 2 (pointer mode), then F5 a (or b or c) EXE
+to select <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>a</mi></mrow><annotation encoding='application/x-tex'>a</annotation></semantics></math> (or (<math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>b</mi></mrow><annotation encoding='application/x-tex'>b</annotation></semantics></math> or <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>c</mi></mrow><annotation encoding='application/x-tex'>c</annotation></semantics></math>). Type EXE then the right and left arrow keys,
+EXE again to stop moving the cursor.</p><p>A lot of variations may be done, some of them simpler with one or two cursors
+and a curve depending on one or two parameters. For example a line equation
+explorer with <code>line(y=a*x+b)</code> or a trigonometic explorer with
+<code>plot(sin(a*x+b))</code>.</p>
+<!--TOC subsubsection id="sec36" Measures and legends-->
+<h4 id="sec36" class="subsubsection">11.3.3  Measures and legends</h4><!--SEC END --><p>
+From the graphical view, type F4 and select 13 Measure.
+You can compute and display a measure at some point of the figure.
+For example after creating a triangle, one can display the
+perimeter of the triangle or its area. Type F4 then uparrow twice EXE.
+Move the pointer near the triangle, type EXE, move the pointer
+where you want to display the measure and type EXE.</p><p>From the symbolic view, you can display a legend with the
+<code>legende()</code> command.
+The first argyment of legend may be a point of the figure, or
+a vector of 2 integers giving the absolute position in pixels
+(measured from the top left corner). The second argument
+is the legend, it may be a string or any expression.</p><p>If the legend is a numeric value, it can be used as a numeric parameter
+for commands that require such an argument, like transformations
+(angle of rotation, homothety ratio...)<br>
+<code>r:=legend([20,40],"2")</code><br>
+<code>homothety(A,extract_measure(r),B)</code> </p>
+<!--TOC subsubsection id="sec37" Traces-->
+<h4 id="sec37" class="subsubsection">11.3.4  Traces</h4><!--SEC END --><p>
+The <code>trace()</code> command lets you keep track of all the positions of
+a geometric object when the figure is recomputed while moving a point</p><p><span style="font-weight:bold">Example</span> Enveloppe of the normals to a parametric curve (here an ellipse)
+</p><pre class="verbatim">E:=plotparam([cos(t),2*sin(t)],t=-pi..pi)
+a:=element(-pi..pi)
+M:=element(E,a)
+T:=tangent(M)
+N:=perpendiculaire(M,T)
+trace(N)
+</pre><p>
+If you change the value of <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>a</mi></mrow><annotation encoding='application/x-tex'>a</annotation></semantics></math> (F4 2 for pointer mode, F5 a),
+you will see a curve that separates the area of normals to the curve
+and a free area, this is the enveloppe of normals, it is also
+the evolute of the ellipse<br>
+<code>evolute(E,color=red)</code><br>
+You can remove the traces in the graphical view from the F6 menu (last item).</p>
+<!--TOC subsection id="sec38" CAS spreadsheet...-->
+<h3 id="sec38" class="subsection">11.4  CAS spreadsheet...</h3><!--SEC END --><p>
+The file menu has an application item that lets you select
+additional applications: a formal spreadsheet,
+a finance app, a periodic table, .... Shortcut: type S<math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mo>&leftrightarrow;</mo></mrow><annotation encoding='application/x-tex'>\leftrightarrow</annotation></semantics></math>D from
+the shell or programming editor.</p><p>Unlike Casio spreadsheet, the CAS spreadsheet can handle exact or
+symbolic values. You can compute cells whose values are
+fractions, square roots or expressions containing variables like
+<math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>x</mi><mo>,</mo><mi>y</mi><mo>.</mo><mo>.</mo><mo>.</mo></mrow><annotation encoding='application/x-tex'>x,y...</annotation></semantics></math>.</p><p>A cell can contain any valid Xcas value, numbers, strings, etc.
+If you enter a list of values, or an Xcas command returning a list
+of values, the list will fill consecutives cells (downwards or to the
+right, according to the setup). For example type F1 <code>range(</code>
+10 EXE, this will fill 10 cells with numbers from 0 to 9.</p><p>Defining a cell content with reference to other cells
+is similar to other spreadsheet, begin with
+<code>=</code>, and enter an expression that may contain cell references 
+(characters <code>:</code> and <code>&#36;</code> are available from F3 menu,
+<code>:</code> is also accessible with shift <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mo>&rightarrow;</mo></mrow><annotation encoding='application/x-tex'>\rightarrow</annotation></semantics></math>). While editing
+the cell content, you can select another cell by pressing the up or
+down cursor key followed by any other cursor key. To select a range,
+move to the begin of selection cell, 
+press shift-CLIP then move to the end of selection and type EXE.</p><p>While defining a cell, any Xcas commands may be used (you can get
+them from F4 menu, or fast menus (F1, F2, shift F1-shift F6, alpha
+F1-alpha F6 or shift CATALOG). Programming Xcas structures may also be used as well
+as Xcas functions that you have defined. Beware that MicroPython functions
+are not supported.</p><p>A cell can be defined with a command returning a graphic result. Type
+the S<math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mo>&leftrightarrow;</mo></mrow><annotation encoding='application/x-tex'>\leftrightarrow</annotation></semantics></math>D key to display the graphic corresponding to
+the graphical output of the whole spreadsheet.</p>
+<!--TOC section id="sec39" Copyright and Thanks to.-->
+<h2 id="sec39" class="section">12  Copyright and Thanks to.</h2><!--SEC END --><ul class="itemize"><li class="li-itemize">
+Giac and <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>&chi;</mi></mrow><annotation encoding='application/x-tex'>\chi</annotation></semantics></math>CAS, computing kernel (c) B. Parisse et R. De Graeve, 2022.
+</li><li class="li-itemize"><math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>&chi;</mi></mrow><annotation encoding='application/x-tex'>\chi</annotation></semantics></math>CAS interface adapted by B. Parisse from
+Eigenmath source code by Gabrial Maia and from Xcas source code.
+</li><li class="li-itemize"><math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>&chi;</mi></mrow><annotation encoding='application/x-tex'>\chi</annotation></semantics></math>CAS license GPL2. See details in
+the <code>LICENSE.GPL2</code> file, inside 
+<a href="https://www-fourier.univ-grenoble-alpes.fr.fr/~parisse/casio/khicasio.zip">khicasio.zip</a>
+or
+<a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html">GPL2</a>
+on the Free Software Foundation website.
+The source code of <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>&chi;</mi></mrow><annotation encoding='application/x-tex'>\chi</annotation></semantics></math>CAS and of the required libraries
+libtommath and USTL are available in the
+<a href="https://www-fourier.univ-grenoble-alpes.fr.fr/~parisse/casio/">Casio section</a> of my webpage (see section <a href="#sec%3Adev">13</a>).
+</li><li class="li-itemize">Thanks to the active members
+of tiplanet and Planete Casio for answering questions and testing
+during the time I developed <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>&chi;</mi></mrow><annotation encoding='application/x-tex'>\chi</annotation></semantics></math>CAS. Special thanks to LePhenixNoir 
+(Prizm/35+eii help), Nemhardy (Prizm), and to critor
+for articles, tests and advertising.
+Thanks to all contributors of
+<a href="http://prizm.cemetech.net/index.php/Prizm_Programming_Portal#Native_OS_reference">the Prizm programming portal</a>.
+Thanks to Pavel Demin for compilation tricks that spared
+about 135K.
+</li><li class="li-itemize">Thanks to Camille Margot for her interest in this ports,
+and to Casio France for sending me calculators and
+an emulator license.
+</li></ul>
+<!--TOC section id="sec40" Developer infos.-->
+<h2 id="sec40" class="section">13  Developer infos.</h2><!--SEC END --><p> <a id="sec:dev"></a>
+</p>
+<!--TOC subsection id="sec41" Debugger-->
+<h3 id="sec41" class="subsection">13.1  Debugger</h3><!--SEC END --><p>
+Install the cross-gdb tool for the Casio like this
+</p><ol class="enumerate" type=1><li class="li-enumerate">
+install wine 
+</li><li class="li-enumerate">install Casio emulator (available from Casio site)
+with a command like this<br>
+<code>wine /path_to/fx-CG_Manager_PLUS_Subscription_for_fx-CG50series_Ver.3.40.exe</code>
+</li><li class="li-enumerate">install gdb-server equivalent
+<pre class="verbatim">cd .wine/drive_c/Program\ Files\ <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>x</mi><mn>86</mn></mrow><annotation encoding='application/x-tex'>x86</annotation></semantics></math>/CASIO/fx-CG\ Manager\ PLUS\ Subscription\ for\ fx-CG50series/
+mv CPU73050.dll CPU73050.real.dll
+wget https://www-fourier.univ-grenoble-alpes.fr/~parisse/casio/CPU73050.dll
+cp CPU73050.dll CPU73050.dbg.dll
+</pre>
+source and other releases for the dll :
+<code>https://github.com/redoste/fx-CG50_Manager_PLUS-gdbserver</code>).</li><li class="li-enumerate">compile gdb for sh3:
+<pre class="verbatim">wget https://ftp.gnu.org/gnu/gdb/gdb-11.1.tar.gz
+cd casio (ou autre repertoire de build)
+tar xvfz ../gdb-11.1.tar.gz
+mkdir sh3eb-gdb
+cd sh3eb-gdb
+../gdb-11.1/configure --srcdir=../gdb-11.1 --target=sh3eb-elf
+</pre>
+(add –prefix=path if you do not have write access to /usr/local/bin).
+Then
+<pre class="verbatim">make
+sudo make install
+</pre><p>Create two scripts, <code>casioemu</code> for normal emulation
+</p><pre class="verbatim">#! /bin/bash
+cd ~/.wine/drive_c/Program\ Files\ <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>x</mi><mn>86</mn></mrow><annotation encoding='application/x-tex'>x86</annotation></semantics></math>/CASIO/fx-CG\ Manager\ PLUS\ Subscription\ for\ fx-CG50series
+/bin/cp CPU73050.real.dll CPU73050.dll
+cd
+wine "C:\Program Files (x86)\CASIO\fx-CG Manager PLUS Subscription for fx-CG50series\fx-CG_Manager_PLUS_Subscription_for_fx-CG50series.exe" /n"fx-CG Manager PLUS Subscription for fx-CG50series" &gt; /dev/null &amp;
+</pre><p>
+and <code>casiodbg</code> for debug mode
+</p><pre class="verbatim">#! /bin/bash
+cd ~/.wine/drive_c/Program\ Files\ <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><semantics><mrow><mi>x</mi><mn>86</mn></mrow><annotation encoding='application/x-tex'>x86</annotation></semantics></math>/CASIO/fx-CG\ Manager\ PLUS\ Subscription\ for\ fx-CG50series
+/bin/cp CPU73050.dbg.dll CPU73050.dll
+cd
+wine "C:\Program Files (x86)\CASIO\fx-CG Manager PLUS Subscription for fx-CG50series\fx-CG_Manager_PLUS_Subscription_for_fx-CG50series.exe" /n"fx-CG Manager PLUS Subscription for fx-CG50series" &gt; /dev/null &amp;
+</pre></li><li class="li-enumerate">For normal emulation run <code>casioemu</code>, for debug emulation run
+<pre class="verbatim">casiodbg
+sh3eb-elf-gdb
+target remote localhost:31188
+</pre>
+Or in one command if your debug infos are in emucas.elf<br>
+<code>sh3eb-elf-gdb -i=mi -ex "target remote localhost:31188" emucas.elf</code><p>You can set a breakpoint with <code>b</code> or <code>hb</code> (<code>hbreak</code>
+(hardware break, this is required for the first breakpoint).
+</p></li></ol>
+<!--TOC subsection id="sec42" Giac-->
+<h3 id="sec42" class="subsection">13.2  Giac</h3><!--SEC END --><p>
+Quick linux install : get
+<a href="https://www-fourier.univ-grenoble-alpes.fr/~parisse/casio/libmpfr.so.4">libmpfr.so.4</a>
+and copy it to <code>/usr/local/lib</code>, check that <code>/usr/local/lib</code> is in the paths listed in
+<code>/etc/ld.so.conf</code> and run <code>sudo ldconfig</code>.
+Now unarchive
+<a href="https://www-fourier.univ-grenoble-alpes.fr/~parisse/casio/casiolocal.tgz">casiolocal.tgz</a>, 
+this is a working cross-gcc for Casio calculators with additional
+libraries (libc, ustl, tommath).
+You will also need to install
+<a href="https://www-fourier.univ-grenoble-alpes.fr/ parisse/casio/mkg3a.tgz">mkg3a</a>
+to build addins for the FXCG.
+Then get <a href="https://www-fourier.univ-grenoble-alpes.fr/~parisse/casio/giac2.tgz">giac2.tgz</a>
+or
+<a href="https://www-fourier.univ-grenoble-alpes.fr/~parisse/casio/giacbf.tgz">giacbf.tgz</a>, 
+unarchive and run <code>make</code>. For the light version get <a href="https://www-fourier.univ-grenoble-alpes.fr/~parisse/casio/giac90.tgz">giac90.tgz</a></p><p>If something goes wrong, here are some details. 
+You must install the gcc cross-compiler
+for sh3eb CPU, following this
+<a href="https://www.planet-casio.com/Fr/forums/topic12970-1-Tutoriel_Compiler_sous_Linux_avec_un_cross-compilateur_gcc.html">tutorial (French)</a>.
+I have configured gcc like this<br>
+<code>../gcc-5.3.0/configure --target=sh3eb-elf --prefix="&#36;HOME/opt/sh3eb-elf" --disable-nls --disable-shared --disable-multilib --enable-languages=c,c++ --without-headers</code><br>
+Unfortunately, there is no support for sh3eb in the <code>newlib</code>
+(C librairy) of gcc, nor for <code>libstdc++</code>.</p><p>The libc is replaced by
+<a href="https://www-fourier.univ-grenoble-alpes.fr/ parisse/casio/libfxcg90.tgz">libfxcg
+(for CG50)</a> (it comes from the original SDK with a few modifications,
+corrections of small bugs, added missing functions like qsort, ...), 
+In the same 
+<a href="https://www-fourier.univ-grenoble-alpes.fr.fr/~parisse/casio/">folder</a>, you will also find <code>tommath.tgz</code> (big integer
+support) and <code>ustl.tar.gz</code> (standard template library) 
+that I also had to modify to make it work with sh3eb-elf-g++, 
+with partial success, i.e. enough support to build Giac 
+(vector/string/map supported, I/O on files are not supported,
+there is a custom iostream file for cin/cout minimal support).
+Unarchive and compile with make.</p><p>For the monochrom Fx-9860GIII, get 
+<a href="https://www-fourier.univ-grenoble-alpes.fr.fr/~parisse/casio/giac35.tar.bz2">giac35.tar.bz2</a> and
+run <code>make</code> in the <code>giac35/src0</code> directory.</p><p>
+
+</div>
+<div id="controldiv" style="max-height: 400px; overflow:auto">
+<span id="controlindex"></span>
+<button title="Clone last command to Xcas for Firefox" onclick="UI.clone()">Clone</button>
+<button title="Clear console" onclick="document.getElementById('output').innerHTML='';">Clear</button>
+<button title="Increase console size" onclick="var field=document.getElementById('output'); var s=field.style.maxHeight; s=s.substr(0,s.length-2);s=eval(s)+20 ;if(s<innerHeight/2){s=s+'px';field.style.maxHeight=s; field=document.getElementById('maindiv'); s=field.style.maxHeight; s=s.substr(0,s.length-2);s=eval(s)-20; s=s+'px';field.style.maxHeight=s;}">+</button>
+<button title="Decrease console size" onclick="var field=document.getElementById('output'); var s=field.style.maxHeight; s=s.substr(0,s.length-2);s=eval(s)-20 ; if(s>80){s=s+'px';field.style.maxHeight =s;field=document.getElementById('maindiv'); s=field.style.maxHeight; s=s.substr(0,s.length-2);s=eval(s)+20; s=s+'px';field.style.maxHeight=s;}">-</button>
+<textarea title="Commandline for a quick computation" onkeypress="UI.ckenter(event,this,3);" style="width:400px;height:20px;font-size:large"></textarea><button  title="Eval previous cell" onclick="UI.quick(this);">-></button><span></span>
+&nbsp;&nbsp;<button onclick="var s=UI.caseval('restart;'); Module.print(s);" title="Reset CAS computing kernel">Restart</button>
+<button onclick="UI.exec(document.documentElement);" title='Click here to exec all commands (maybe be long!)'>Exec. all</button>
+<canvas id='canvas' width=0 height=0   onmousedown="UI.canvas_pushed=true;UI.canvas_lastx=event.clientX; UI.canvas_lasty=event.clientY;"  onmouseup="UI.canvas_pushed=false;" onmousemove="UI.canvas_mousemove(event,'')"></canvas>
+<div id="output" style="max-height: 80px; overflow:auto"></div>
+</div>
+</div>
+
+
+<script language="javascript"> 
+var Module = { 
+        htmlcheck:true,
+        htmlbuffer:'',
+        preRun: [],
+        postRun: [],
+        ready:false,
+        print: (function() {
+          var element = document.getElementById('output');
+          element.innerHTML='';// element.value = ''; // clear browser cache
+          return function(text) {
+            //console.log(text.charCodeAt(0));
+            if (text.length==1 && text.charCodeAt(0)==12){ element.innerHTML=''; return; }
+            if (text.length>=1 && text.charCodeAt(0)==2) {console.log('STX');Module.htmlcheck=false; htmlbuffer='';return;}
+            if (text.length>=1 && text.charCodeAt(0)==3) {console.log('ETX');Module.htmlcheck=true; element.style.display='inherit'; element.innerHTML += htmlbuffer;htmlbuffer='';element.scrollTop = 99999; return;}
+            if (Module.htmlcheck){
+            // These replacements are necessary if you render to raw HTML 
+             text = text.replace(/&/g, "&amp;");
+             text = text.replace(/</g, "&lt;");
+             text = text.replace(/>/g, "&gt;");
+             text = text.replace('\n', '<br>', 'g');
+             text += '<br>'
+             element.style.display='inherit';
+             element.innerHTML += text; // element.value += text + "\n";
+             element.scrollTop = 99999; // focus on bottom
+            } else htmlbuffer += text;
+          };
+        })(),
+     canvas: document.getElementById('canvas'),};
+Module['onRuntimeInitialized']=function(){ console.log('UI is ready'); Module.ready=true;}
+</script>
+
+
+
+<script async>
+  var UI={
+   detectmob:function() { 
+    if( navigator.userAgent.match(/Android/i)
+	|| navigator.userAgent.match(/webOS/i)
+	|| navigator.userAgent.match(/iPhone/i)
+	|| navigator.userAgent.match(/iPad/i)
+	|| navigator.userAgent.match(/iPod/i)
+	|| navigator.userAgent.match(/BlackBerry/i)
+	|| navigator.userAgent.match(/Windows Phone/i)
+      ) return true;
+    else 
+      return false;
+   },
+   readCookie:function(name) {
+    if (window.localStorage){
+      var tmp=localStorage.getItem(name);
+      if (tmp!=null) return tmp;
+    }
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+      var c = ca[i];
+      while (c.charAt(0)==' ') c = c.substring(1,c.length);
+      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+   },
+  }
+  var script = document.createElement("script");
+  script.type = "text/javascript";
+  var webAssemblyAvailable = false;
+  if (Boolean(window.chrome)){
+    if (!UI.detectmob()) webAssemblyAvailable =  window.location.href.substr(0,4)!='file';
+  }
+  else {
+    var ua = window.navigator.userAgent;
+    var old_ie = ua.indexOf('MSIE ');
+    var new_ie = ua.indexOf('Trident/');
+    if (!UI.detectmob() && old_ie<=-1 && new_ie<=-1)
+      webAssemblyAvailable =!!window.WebAssembly;
+  }
+  if (webAssemblyAvailable){
+    var ck=UI.readCookie('xcas_wasm');
+    if (ck)
+      webAssemblyAvailable=(ck=='1');
+  }
+  if (webAssemblyAvailable) // fixme: enable
+    script.src =""+"giacwasm.js";
+  else
+    script.src  =""+"giac.js";
+  document.getElementsByTagName("head")[0].appendChild(script);
+</script>
+
+
+
+
+<script language="javascript"> 
+ var UI = {
+  Datestart:Date.now(),
+  n2d:0,
+  python:0,
+  histcount:0,
+  usemathjax:false,
+  lastcmd:'',
+  clone:function(){
+    if (UI.lastcmd.length){
+       var tmp=UI.giaceval('VARS(-1)');
+       tmp=encodeURIComponent(tmp);
+       var url='https://www-fourier.univ-grenoble-alpes.fr/~parisse/xcasen.html'+String.fromCharCode(35)+'+'+tmp+':;&+'+UI.lastcmd;
+       console.log(url);
+       window.open(url,'_blank');
+    }
+  },
+  canvas_pushed:false,
+  canvas_lastx:0,
+  canvas_lasty:0,
+  canvas_mousemove:function(event,no){
+    if (UI.canvas_pushed){
+      // Module.print(event.clientX);
+      if (UI.canvas_lastx!=event.clientX){
+        if (event.clientX>UI.canvas_lastx)
+          giac3d('r'+no);
+        else
+          giac3d('l'+no);
+        UI.canvas_lastx=event.clientX;
+      }
+      if (UI.canvas_lasty!=event.clientY){
+        if (event.clientY>UI.canvas_lasty)
+          giac3d('d'+no);
+        else
+          giac3d('u'+no);
+        UI.canvas_lasty=event.clientY;
+      }
+    }
+  },  
+  count_newline:function(s){
+    var ss=s.length,i,res=1;
+    for (i=0;i<ss;i++){
+      if (s[i]=='\n') res++;
+    }
+    return res;
+  },
+  ltgt:function(s){
+    var ss=s.length,i,res='',c=0;
+    for (i=0;i<ss-4;i++){
+      if (s[i]=='\n') c++;      
+      if (s[i]!='&' || s[i+2]!='t' || s[i+3]!=';'){
+        res += s[i];
+        continue;
+      }
+      if (s[i+1]=='l'){
+        res += '<';
+        i +=3;
+        continue;
+      }
+      if (s[i+1]=='g'){
+        res += '>';
+        i +=3;
+        continue;
+      }
+      res += s[i];
+    }
+    for (;i<ss;i++) res+=s[i];
+    return [res,c];
+  },
+  rmquote:function(tmp){
+    var s=tmp.length;
+    if (s>2 && tmp.charCodeAt(0)==34 && tmp.charCodeAt(s-1)==34)
+      tmp=tmp.substr(1,s-2);
+    return tmp;
+  },
+  renderhelp: function (s) {
+    var pos0 = s.search("</b>");
+    //console.log(s);
+    var found = (s.substr(pos0 + 7, 20) != "Best match has score");
+    var lh = s.substr(3, pos0 - 3);
+    var unlocalized_cmd = lh;
+    var sorig = s;
+    pos1 = s.search("<br>");
+    if (pos1 < 0) return sorig;
+    var explication = s.substr(0, pos1);
+    s = s.substr(pos1 + 4, s.length - pos1 - 4);
+    pos1 = s.search("<br>");
+    if (pos1 < 0) return sorig;
+    var syntaxe = s.substr(0, pos1);
+    s = s.substr(pos1 + 4, s.length - pos1 - 4);
+    pos1 = s.search("<br>");
+    if (pos1 < 0) return sorig;
+    var voiraussi = s.substr(0, pos1);
+    var examples = s.substr(pos1 + 4, s.length - pos1 - 4);
+    s = '';//'<b>'+unlocalized_cmd+':</b> ';
+    if (found)
+      s += explication + '<br>See also: ' +voiraussi+'<br><b>Examples : </b>'+examples;
+    else
+      s += explication.substr(0, pos0);
+    return s;
+  },   
+  quickmode:0,
+  quick:function(field){
+    var tmp1=field.previousSibling.value,tmp;
+    if (tmp1=='python' || tmp1=='xcas'){
+      UI.quickmode=(tmp1=='python');
+      tmp='Type python or xcas to change mode';
+    }
+    else {
+     if (UI.quickmode){
+        tmp=UI.pythoneval(tmp1);
+     }
+     else {
+       tmp=UI.caseval(tmp1);
+       tmp=UI.rmquote(tmp); 
+       tmp=UI.latexeval(tmp);
+     }
+    }
+    Module.print(String.fromCharCode(2));
+    Module.print("<tt>");
+    Module.print(tmp1);
+    Module.print("</tt><br>&nbsp;&nbsp;");
+    if (tmp.length>3 && tmp.substr(0,3)=='<b>'){ 
+       Module.print(UI.renderhelp(tmp)); tmp='';
+    } else Module.print(tmp);
+    Module.print("<br>");
+    Module.print(String.fromCharCode(3));
+    field.nextSibling.innerHTML='&nbsp;'+tmp;
+   //UI.render_canvas(nextSibling);  
+  },
+  giaceval:function(text){
+     if (UI.python) text='@@'+text;
+     if (!Module.ready){ window.setTimeout(UI.giaceval,100,text); return " ... ";}
+     var dogiaceval=Module.cwrap('caseval',  'string', ['string']);
+     return dogiaceval(text);
+  },
+  micropy_initialized:0,
+  micropy_heapsize:4*1024*1024,
+  python_output:"",
+  clean_for_html: function(text){
+    text = text.replace(/&/g, "&amp;");
+    text = text.replace(/</g, "&lt;");
+    text = text.replace(/>/g, "&gt;");
+    text = text.replace(/\n/g, '<br>');
+    return text;
+  },    
+  add_python_output:function(s){
+    UI.python_output += s;
+    //console.log(s);//console.log(UI.python_output);
+  },
+  mpeval:function(text){
+     if (!Module.ready){ window.setTimeout(UI.mpeval,100,text); return " ... ";}
+     if (text=='.') return UI.giaceval('avance(0)');
+     if (text==',') return UI.giaceval('show(0)');
+     if (text==';') return UI.giaceval('show_pixels(0)');
+     if (UI.micropy_initialized==0){
+        var init = Module.cwrap('mp_js_init', 'null', ['number']);
+        UI.micropy_initialized=1;
+        init(UI.micropy_heapsize);
+     }
+     UI.python_output="";
+     var dompeval=Module.cwrap('mp_js_do_str', 'number', ['string']);
+     dompeval(text);
+     return UI.python_output;
+  },
+  script_eval:function(text){
+    UI.lastcmd=text;
+    var s="not evaled",err;
+    try {
+       s= UI.giaceval(text);
+    } catch (err) { s=err.message;}
+    var is_2d=s.length>4 && s.substr(0,4)=='gr2d';
+    if (is_2d){
+      s = '<canvas id="gr2d_'+UI.n2d+'" width=400 height=250>'+s+'</canvas>';
+      //console.log(UI.n2d,s);
+      UI.n2d++;
+    }
+    var is_3d=s.length>5 && s.substr(0,5)=='gl3d ';
+    if (is_3d){
+	var n3d=s.substr(5,s.length-5);
+	s = '<canvas id="gl3d_'+n3d+'" onmousedown="UI.canvas_pushed=true;UI.canvas_lastx=event.clientX; UI.canvas_lasty=event.clientY;" onmouseup="UI.canvas_pushed=false;" onmousemove="UI.canvas_mousemove(event,'+n3d+')" width=400 height=250></canvas>';
+    }
+   //console.log(s);
+    return s;
+  },
+  caseval:function(text){
+    if (text=='.') return UI.caseval('avance(0)');
+    if (text==',') return UI.caseval('show(0)');
+    if (text==';') return UI.caseval('show_pixels(0)');
+    return UI.script_eval(text,UI.giaceval);
+  },
+  pythoneval:function(text){
+    return script_eval(text,UI.mpeval);
+  },
+  pourcentmod:function(a,b){
+    return a-Math.floor(a/b)*b;
+  },
+  color_list: ['black',
+    'red',
+    'green',
+    'yellow',
+    'blue',
+    'magenta',
+    'cyan',
+    'white',
+    'silver',
+    'gray',
+    'maroon',
+    'purple',
+    'fuchsia',
+    'lime',
+    'olive',
+    'navy',
+    'teal',
+    'aqua',
+    'antiquewhite',
+    'aquamarine',
+    'azure',
+    'beige',
+    'bisque',
+    'blanchedalmond',
+    'blueviolet',
+    'brown',
+    'burlywood',
+    'cadetblue',
+    'chartreuse',
+    'chocolate',
+    'coral',
+    'cornflowerblue',
+    'cornsilk',
+    'crimson',
+    'cyan',
+    'darkblue',
+    'darkcyan',
+    'darkgoldenrod',
+    'darkgray',
+    'darkgreen',
+    'darkgrey',
+    'darkkhaki',
+    'darkmagenta',
+    'darkolivegreen',
+    'darkorange',
+    'darkorchid',
+    'darkred',
+    'darksalmon',
+    'darkseagreen',
+    'darkslateblue',
+    'darkslategray',
+    'darkslategrey',
+    'darkturquoise',
+    'darkviolet',
+    'deeppink',
+    'deepskyblue',
+    'dimgray',
+    'dimgrey',
+    'dodgerblue',
+    'firebrick',
+    'floralwhite',
+    'forestgreen',
+    'gainsboro',
+    'ghostwhite',
+    'gold',
+    'goldenrod',
+    'greenyellow',
+    'grey',
+    'honeydew',
+    'hotpink',
+    'indianred',
+    'indigo',
+    'ivory',
+    'khaki',
+    'lavender',
+    'lavenderblush',
+    'lawngreen',
+    'lemonchiffon',
+    'lightblue',
+    'lightcoral',
+    'lightcyan',
+    'lightgoldenrodyellow',
+    'lightgray',
+    'lightgreen',
+    'lightgrey',
+    'lightpink',
+    'lightsalmon',
+    'lightseagreen',
+    'lightskyblue',
+    'lightslategray',
+    'lightslategrey',
+    'lightsteelblue',
+    'lightyellow',
+    'limegreen',
+    'linen',
+    'mediumaquamarine',
+    'mediumblue',
+    'mediumorchid',
+    'mediumpurple',
+    'mediumseagreen',
+    'mediumslateblue',
+    'mediumspringgreen',
+    'mediumturquoise',
+    'mediumvioletred',
+    'midnightblue',
+    'mintcream',
+    'mistyrose',
+    'moccasin',
+    'navajowhite',
+    'oldlace',
+    'olivedrab',
+    'orangered',
+    'orchid',
+    'palegoldenrod',
+    'palegreen',
+    'paleturquoise',
+    'palevioletred',
+    'papayawhip',
+    'peachpuff',
+    'peru',
+    'pink',
+    'plum',
+    'powderblue',
+    'rosybrown',
+    'royalblue',
+    'saddlebrown',
+    'salmon',
+    'sandybrown',
+    'seagreen',
+    'seashell',
+    'sienna',
+    'skyblue',
+    'slateblue',
+    'slategray',
+    'slategrey',
+    'snow',
+    'springgreen',
+    'steelblue',
+    'tan',
+    'thistle',
+    'tomato',
+    'turquoise',
+    'violet',
+    'wheat',
+    'whitesmoke',
+    'yellowgreen'],
+  arc_en_ciel: function (k) {
+    var r, g, b;
+    k += 21;
+    k = pourcentmod(k,126);
+    if (k < 0)
+      k += 126;
+    if (k < 21) {
+      r = 251;
+      g = 0;
+      b = 12 * k;
+    }
+    if (k >= 21 && k < 42) {
+      r = 251 - (12 * (k - 21));
+      g = 0;
+      b = 251;
+    }
+    if (k >= 42 && k < 63) {
+      r = 0;
+      g = (k - 42) * 12;
+      b = 251;
+    }
+    if (k >= 63 && k < 84) {
+      r = 0;
+      g = 251;
+      b = 251 - (k - 63) * 12;
+    }
+    if (k >= 84 && k < 105) {
+      r = (k - 84) * 12;
+      g = 251;
+      b = 0;
+    }
+    if (k >= 105 && k < 126) {
+      r = 251;
+      g = 251 - (k - 105) * 12;
+      b = 0;
+    }
+    return 'rgb(' + r + ',' + g + ',' + b + ')';
+  },
+  turtle_color: function (c) {
+    if (c >= 0x100) {
+      if (c < 0x17e)
+        return UI.arc_en_ciel(c);
+      var r=8*((c>>11) & 0x1f);
+      var g=4*((c>>5) & 0x3f);
+      var b=8*(c & 0x1f);
+      return 'rgb(' + r + ',' + g + ',' + b + ')';
+    }
+    return UI.color_list[c];
+  },
+  pixon_draw: function (id, s) {
+    var v = eval(s);
+    if (!Array.isArray(v)) return;
+    //console.log(v[0], v.length);
+    var canvas = document.getElementById(id);
+    var l = v.length, w = 0, h = 0;
+    if (l < 2) return;
+    var scale = v[0];
+    for (var k = 1; k < l; k++) {
+      var cur = v[k];
+      var x = cur[0], y = cur[1];
+      if (cur.length==3 && typeof cur[2]!="number"){
+	x+=100;
+	y+=16;
+      }
+      if (cur.length==4) {
+        var tmp = cur[3];
+	if (typeof tmp=="number"){
+          if (tmp > 0) y += tmp; else x -= tmp;
+	} else {
+	  x+=100;
+	  y+=16;
+	}
+      }
+      //console.log(cur,x,y);
+      if (x > w) w = x;
+      if (y > h) h = y;
+    }
+    w = (w + 1) * scale;
+    h = (h + 1) * scale;
+    canvas.width = w;
+    canvas.height = h;
+    //console.log(h,w);
+    if (canvas.getContext) {
+      var ctx = canvas.getContext('2d');
+      for (var k = 1; k < l; k++) {
+        var cur = v[k], cl;
+        //console.log(cur);
+        if (!Array.isArray(cur) || (cl = cur.length) < 2) continue;
+        // cur[0]=x, cur[1]=y, cur[2]=color, cur[3]=w if +, h if -
+        var x = cur[0] * scale;
+        var y = cur[1] * scale;
+	if (cl>2 && typeof cur[2]=="string"){
+	  console.log(cur[2]);
+	  ctx.font = '16px serif';
+	  ctx.fillStyle = 'black';
+	  ctx.fillText(cur[2],x,y+16,100);
+	  continue;
+	}
+        ctx.fillStyle = (cl > 2) ? UI.turtle_color(cur[2]) : 'black';
+        if (cl < 4) {
+          ctx.fillRect(x, y, scale, scale);
+          continue;
+        }
+	if (typeof cur[3]=="string"){
+	  ctx.font = '16px serif';
+	  ctx.fillText(cur[3],x,y+16,100);
+	  continue;
+	}
+        var h = cur[3] * scale, w = scale;
+        if (h < 0) {
+          w = -h;
+          h = scale;
+        }
+        ctx.fillRect(x, y, w, h);
+      }
+    }
+  },
+  turtle_dx: 0, // shift frame
+  turtle_dy: 0,
+  turtle_z: 1,  // zoom factor
+  turtle_maillage: 1,
+  turtle_draw: function (id, s) {
+    if (s.length < 7) return;
+    s = s.substr(5, s.length - 6);
+    if (s.length > 7 && s.substr(s, 6) == "pixon(") {
+      UI.pixon_draw(id, s.substr(6, s.length - 7));
+      return;
+    }
+    if (s.length < 6 || s.substr(s, 5) != "logo(")
+      return;
+    s = s.substr(5, s.length - 6);
+    //console.log(s);
+    var v = eval(s);
+    if (!Array.isArray(v)) return;
+    //console.log(v[0]);
+    var canvas = document.getElementById(id);
+    var w = canvas.width, h = canvas.height;
+    if (canvas.getContext) {
+      var ctx = canvas.getContext('2d');
+      var turtlezoom = UI.turtle_z, turtlex = UI.turtle_dx, turtley = UI.turtle_dy;
+      // maillage
+      if (UI.turtle_maillage & 3) {
+        ctx.fillStyle = 'black';
+        var xdecal = Math.floor(turtlex / 10.0) * 10;
+        var ydecal = Math.floor(turtley / 10.0) * 10;
+        if ((UI.turtle_maillage & 0x3) == 1) {
+          for (var i = xdecal; i < w + xdecal; i += 10) {
+            for (var j = ydecal; j < h + ydecal; j += 10) {
+              var X = Math.floor((i - turtlex) * turtlezoom + .5);
+              var Y = Math.floor((j - turtley) * turtlezoom + .5);
+              // console.log(X,Y);
+              ctx.fillRect(X, h - Y, 1, 1);
+            }
+          }
+        } else {
+          var dj = Math.sqrt(3.0) * 10, i0 = xdecal;
+          for (var j = ydecal; j < h + ydecal; j += dj) {
+            var J = Math.floor(h - (j - turtley) * turtlezoom);
+            for (var i = i0; i < w + xdecal; i += 10) {
+              ctx.fillRect(Math.floor((i - turtlex) * turtlezoom + .5), J, 1, 1);
+            }
+            i0 += dj;
+            while (i0 >= 10)
+              i0 -= 10;
+          }
+        }
+      }
+      var l = v.length, i;
+      // montre la position et le cap (v[l-1])
+      var prec = v[l - 1];
+      ctx.font = '16px serif';
+      ctx.fillStyle = 'yellow';
+      ctx.fillRect(w - 40, 0, 40, 50);
+      ctx.fillStyle = 'black';
+      ctx.fillText('x:' + prec[0], w - 40, 15);
+      ctx.fillText('y:' + prec[1], w - 40, 31);
+      ctx.fillText('t:' + prec[2], w - 40, 49);
+      // v[i]=[x(0),y(1),cap(2),status(3),r(4),chaine(5)],
+      // couleur=status >> 11
+      // longueur_tortue= (status>>3)&0xff
+      // direct=status&4 (vrai si angle dans le sens trigo)
+      // visible=status&2
+      // crayon baisse=status&1
+      // si r>0 arc/disque rayon=r & 0x1ff, theta1=(r >> 9) & 0x1ff, theta2=(r >> 18) & 0x1ff
+      //        rempli=(r>>27)&0x1
+      // si r<0 ligne polygonale extremite v[i] origine v[i+r] (r<0)
+      for (k = 1; k < l; k++) {
+        prec = v[k - 1];
+        var cur = v[k];
+        var preccouleur = prec[3] >> 11; // -> FIXME colors
+        var curcouleur = prec[3] >> 11; // -> FIXME colors
+        if (cur[5].length) {
+          ctx.font = cur[4] + 'px serif';
+          ctx.strokeStyle = ctx.fillStyle = UI.turtle_color(curcouleur);
+          ctx.fillText(cur[5], turtlezoom * (cur[0] - turtlex), h - turtlezoom * (cur[1] - turtley));
+          continue;
+        }
+        var radius = cur[4], precradius = prec[4];
+        var x1 = Math.floor(turtlezoom * (prec[0] - turtlex) + .5),
+            y1 = Math.floor(turtlezoom * (prec[1] - turtley) + .5),
+            x2 = Math.floor(turtlezoom * (cur[0] - turtlex) + .5),
+            y2 = Math.floor(turtlezoom * (cur[1] - turtley) + .5);
+        if (radius > 0) {
+          var r = radius & 0x1ff, theta1, theta2, rempli, x, y, R, angle;
+          theta1 = prec[2]+ ((radius >> 9) & 0x1ff);
+          theta2 = prec[2] + ((radius >> 18) & 0x1ff);
+          rempli = (radius >> 27) & 1;
+	  var seg = (radius >> 28) & 1;
+          R = Math.floor(turtlezoom * r + .5);
+          angle1 = Math.PI / 180 * (theta1 - 90);
+          angle2 = Math.PI / 180 * (theta2 - 90);
+          x = Math.floor(turtlezoom * (cur[0] - turtlex - r * Math.cos(angle2)) + .5);
+          y = Math.floor(turtlezoom * (cur[1] - turtley - r * Math.sin(angle2)) + .5);
+          ctx.beginPath();
+	  if (seg)
+            ctx.moveTo(x2, h - y2);
+	  else {
+            ctx.moveTo(x, h - y);
+            ctx.lineTo(x2, h - y2);
+	  }
+	  //console.log(x,y,x1,y1,angle1,angle2);
+          ctx.arc(x, h - y, R, -angle2,-angle1);
+          ctx.closePath();
+          ctx.strokeStyle = ctx.fillStyle = UI.turtle_color(curcouleur);
+          if (rempli)
+            ctx.fill();
+          else
+            ctx.stroke();
+          continue;
+        }
+        if (prec[3] & 1) {
+          ctx.strokeStyle = ctx.fillStyle = UI.turtle_color(preccouleur);
+          ctx.beginPath();
+          ctx.moveTo(x1, h - y1);
+          ctx.lineTo(x2, h - y2);
+          ctx.closePath();
+          ctx.stroke();
+        }
+        if (radius < -1 && k + radius >= 0) {
+          ctx.strokeStyle = ctx.fillStyle = UI.turtle_color(curcouleur);
+          ctx.beginPath();
+          var x0 = Math.floor(turtlezoom * (cur[0] - turtlex) + .5), y0 = Math.floor(turtlezoom * (cur[1] - turtley) + .5);
+          //console.log('begin',x0,y0);
+          ctx.moveTo(x0, h - y0);
+          for (var i = -1; i >= radius; i--) {
+            prec = v[k + i];
+            var x = Math.floor(turtlezoom * (prec[0] - turtlex) + .5);
+            var y = Math.floor(turtlezoom * (prec[1] - turtley) + .5);
+            //console.log(i,x,y);
+            ctx.lineTo(x, h - y);
+          }
+          //console.log('end',x0,y0);
+          //ctx.lineTo(x0,h-y0);
+          ctx.closePath();
+          ctx.fill(); // automatically close path
+        }
+      }
+      var cur = v[l - 1];
+      if (cur[3] & 2) {
+        // dessin de la tortue
+        var x = Math.floor(turtlezoom * (cur[0] - turtlex) + .5);
+        var y = Math.floor(turtlezoom * (cur[1] - turtley) + .5);
+        var cost = Math.cos(cur[2] * Math.PI / 180);
+        var sint = Math.sin(cur[2] * Math.PI / 180);
+        var turtle_length = (cur[3] >> 3) & 0xff;
+        var Dx = Math.floor(turtlezoom * turtle_length * cost / 2 + .5);
+        var Dy = Math.floor(turtlezoom * turtle_length * sint / 2 + .5);
+        //console.log('tortue',cur,w,h,turtlezoom,x,y,Dx,Dy);
+        ctx.strokeStyle = ctx.fillStyle = UI.turtle_color(curcouleur);
+        ctx.beginPath();
+        ctx.moveTo(x + Dy, h - (y - Dx));
+        ctx.lineTo(x - Dy, h - (y + Dx));
+        ctx.closePath();
+        ctx.stroke();
+        if (!(cur[3] & 1))
+          ctx.strokeStyle = ctx.fillStyle = UI.turtle_color(curcouleur + 1);
+        ctx.beginPath();
+        ctx.moveTo(x + Dy, h - (y - Dx));
+        ctx.lineTo(x + 3 * Dx, h - (y + 3 * Dy));
+        ctx.closePath();
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(x - Dy, h - (y + Dx));
+        ctx.lineTo(x + 3 * Dx, h - (y + 3 * Dy));
+        ctx.closePath();
+        ctx.stroke();
+      }
+    }
+  },
+  render_canvas:function(field){
+   var n=field.id;
+   if (n && n.length>4 && n.substr(0,4)=='gr2d'){
+     var s=field.innerHTML;
+     //console.log(s);
+     UI.turtle_draw(n, s);
+   }
+   if (n && n.length>5 && n.substr(0,5)=='gl3d_'){
+    Module.print(n);
+    var n3d=n.substr(5,n.length-5);
+    giac3d(n3d);
+    return;
+   }
+   var f=field.firstChild;
+   for (;f;f=f.nextSibling){
+     UI.render_canvas(f);
+   }
+  },
+  eval_form: function(field){
+    UI.giaceval('assume('+field.name.value+'=round('+field.valname.value+',12))');
+    var s=UI.caseval(field.prog.value);
+    var is_svg=s.substr(1,4)=='<svg';
+    if (is_svg) field.parentNode.lastChild.innerHTML=s.substr(1,s.length-2);
+    else field.parentNode.lastChild.innerHTML=s;
+   UI.render_canvas(field.parentNode.lastChild);
+  },
+  latexeval:function(text){
+    var tmp=text;
+    if (tmp.length>10 && tmp.substr(0,10)=='GIAC_ERROR') return '"'+tmp.substr(11,tmp.length-11)+'"';
+    if (tmp.length>5 && tmp.substr(0,5)=='gl3d_') return tmp;
+    if (tmp.length>5 && tmp.substr(1,4)=='<svg') return tmp.substr(1,tmp.length-2);
+    if (tmp.length>5 && tmp.substr(0,4)=='<svg') return tmp;
+    if (tmp.length>3 && tmp.substr(0,3)=='<b>') return tmp;
+     if (UI.usemathjax){
+       tmp=UI.giaceval('latex(quote('+tmp+'))');
+       var dollar=String.fromCharCode(36);
+       tmp=dollar+dollar+tmp.substr(1,tmp.length-2)+dollar+dollar;
+       return tmp;
+     }
+     tmp=UI.giaceval('mathml(quote('+tmp+',1))');
+     tmp=tmp.substr(1,tmp.length-2);
+    return tmp;   
+  },
+  ckenter:function(event,field,mode){
+    var key = event.keyCode;
+    if (key != 13 || event.shiftKey) return true;
+   if (mode==3){ UI.quick(field.nextSibling); event.preventDefault(); field.select(); return true; }
+    var tmp=field.value;
+   Module.print(tmp);
+    tmp=UI.caseval(tmp);
+    if (mode==1){
+      tmp=UI.rmquote(tmp); 
+   }
+   if (mode==2){
+     tmp=UI.latexeval(tmp);
+   }
+   field.nextSibling.nextSibling.innerHTML=tmp;
+   UI.render_canvas(field.nextSibling.nextSibling);
+   if (UI.usemathjax) MathJax.Hub.Queue(["Typeset",MathJax.Hub,field.nextSibling.nextSibling]);
+   if (event.preventDefault) event.preventDefault();
+    return false;
+  },
+   exec: function(field){
+     if (field.nodeName=="BUTTON" && field.innerHTML!='Clone' && field.innerHTML!='Restart' && field.innerHTML!='Exec. all'){
+        field.click();
+        return;
+     }
+     if (field.nodeName=="FORM"){
+        UI.eval_form(field);
+        return;
+     }
+     var f=field.firstChild;
+     while (f){
+       UI.exec(f);
+       f=f.nextSibling;
+     }
+   },
+  execonload: function(field){
+     if (!Module.ready){ window.setTimeout(UI.execonload, 100, field); }
+     var f=field.nextSibling;
+     if (f && f.innerHTML=="onload" && field.nodeName=="BUTTON"){
+        field.click();
+        return;
+     }
+     f=field.firstChild;
+     while (f){
+       UI.execonload(f);
+       f=f.nextSibling;
+     }
+   },
+  textarealtgt: function(field){
+     if (field.nodeName=="TEXTAREA"){
+        var tmp=UI.ltgt(field.value);
+        field.value=tmp[0];
+        //field.style.height=20*(tmp[1]+1)+'px';
+        field.rows=tmp[1]+1;
+        return;
+     }
+     var f=field.firstChild;
+     while (f){
+       UI.textarealtgt(f);
+       f=f.nextSibling;
+     }
+   }
+ };
+ window.onload = function(e){
+   var isFirefox = typeof InstallTrigger !== 'undefined';   // Firefox 1.0+
+   var isSafari = Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0;
+  var ua = window.navigator.userAgent;
+  var old_ie = ua.indexOf('MSIE ');
+  var new_ie = ua.indexOf('Trident/');
+  if ((!isFirefox && !isSafari) || (old_ie > -1) || (new_ie > -1) || window.chrome){
+     UI.usemathjax=true;
+     alert("Your browser does not support MathML, using MathJax for 2d rendering. Consider switching to Firefox for better rendering and faster results");
+  }
+  if (UI.usemathjax){
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  }
+  var elem= document.getElementById('controlindex');
+  elem.innerHTML='<hr><a href="'+String.fromCharCode(35)+'sec1">Table</a>, <a href="'+String.fromCharCode(35)+'sec2">Index</a>,'+elem.innerHTML;
+  if (elem.style.maxHeight=='500px')
+    elem.style.maxHeight=(window.innerHeight-120)+'px';
+  elem= document.getElementById('maindiv');
+  elem.style.maxHeight=(window.innerHeight-150)+'px';
+  // Module.print(elem.innerHTML);
+  //elem.parentNode.insertBefore(elem,null);
+  giac3d = Module.cwrap('_ZN4giac13giac_rendererEPKc','number', ['string']);
+  UI.giaceval('set_language(1);');
+  //UI.giaceval('factor(x^4-1)');
+  //UI.giaceval('sin(x+y)+f(t)');
+  UI.textarealtgt(document.documentElement);
+  window.setTimeout(UI.execonload, 1000, document.documentElement); // UI.execonload(document.documentElement);
+  document.getElementById('output').innerHTML='';
+ // if (confirm('Exec commands?')) UI.exec(document.documentElement);
+ };
+</script>
+
+
+</p><!--CUT END -->
+<!--HTMLFOOT-->
+Retour à la page principale de <a href="http://www-fourier.univ-grenoble-alpes.fr/~parisse/giac_fr.html">Giac/Xcas</a>.<!--ENDHTML-->
+<!--FOOTER-->
+<hr style="height:2"></body>
+</html>
